@@ -14,8 +14,7 @@ contract TINUAttacker is Test {
     
     function setUp() public {
         vm.createSelectFork("eth");
-
-        vm.label(address(balancer), "BalancerVault");
+        
         vm.label(address(tinu_weth), "tinu-weth UniswapPair");
         vm.label(address(weth), "WETH");
         vm.label(address(tinu), "TINU");

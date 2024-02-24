@@ -575,7 +575,7 @@ contract TomInu is Context, IERC20, Ownable {
         uint256 rAmount = tAmount.mul(currentRate);
         uint256 rFee = tFee.mul(currentRate);
         uint256 rTransferAmount = rAmount.sub(rFee);
-        // lack sub teamFee ?
+        // Missing sub teamFee
         return (rAmount, rTransferAmount, rFee);
     }
 
