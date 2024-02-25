@@ -5,13 +5,10 @@ import "forge-std/Test.sol";
 import "../interface.sol";
 
 contract SHOCOAttacker is Test {
-    IBalancerVault balancer = IBalancerVault(0xBA12222222228d8Ba445958a75a0704d566BF2C8);
     IUniswapV2Pair shoco_weth = IUniswapV2Pair(0x806b6C6819b1f62Ca4B66658b669f0A98e385D18);
     IReflection shoco = IReflection(0x31A4F372AA891B46bA44dC64Be1d8947c889E9c6);
     IERC20 weth = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2);
 
-    IUniswapV2Router router = IUniswapV2Router(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
-    
     function setUp() public {
         vm.createSelectFork("eth");
 
