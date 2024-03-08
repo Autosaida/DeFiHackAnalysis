@@ -6,6 +6,7 @@ import "./interface/IUniswapV2.sol";
 import "./interface/IUniswapV3.sol";
 import "./interface/IAavePoolV3.sol";
 import "./interface/IBalancer.sol";
+import "./interface/ICompoundV2.sol";
 import "./interface/IPancake.sol";
 import "./interface/IDODO.sol";
 import "./interface/IReflection.sol";
