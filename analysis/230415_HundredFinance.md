@@ -64,7 +64,7 @@ The subsequent flow follows a similar pattern, involving different tokens. Event
 
 ## Vulnerability
 
-To understand the vulnerability and the profit-making mechanism of the attack, it is necessary to first have an understanding of the Hundred Finance protocol, specifically the original protocol Compound v2. Due to the amount of publicly available information, a detailed introduction will not be provided here. You can refer to the [official documentation](https://docs.compound.finance/v2/), [whitepaper](https://compound.finance/documents/Compound.Whitepaper.pdf), and [source code](https://github.com/compound-finance/compound-protocol/) for learning.
+To understand the vulnerability and the profit-making mechanism of the attack, it is necessary to first have an understanding of the [Hundred Finance](https://docs.hundred.finance/) protocol, specifically the original protocol Compound v2. Due to the amount of publicly available information, a detailed introduction will not be provided here. You can refer to the [official documentation](https://docs.compound.finance/v2/), [whitepaper](https://compound.finance/documents/Compound.Whitepaper.pdf), and [source code](https://github.com/compound-finance/compound-protocol/) for learning.
 
 ### Precision Loss / Rounding Error
 
