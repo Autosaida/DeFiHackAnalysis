@@ -318,3 +318,15 @@ As of the writing of this article, the attacker has not taken any further action
 According to the previous analysis, the attacker first `mint` a small amount of hWBTC before the AttackTx and then `redeem` it back to WBTC in the AttackTx, using it along with the 500 WBTC borrowed for the attack.
 
 This way, the attacker already occupied all the shares of the WBTC market before the actual attack, and the `redeem` calls involved, as well as the actual use of more WBTC than borrowed, can prevent frontrunning.
+
+### Patch
+
+``` solidity
+function testPatch() external {
+    uint256 blockNumber = 90843467;
+    vm.createSelectFork("optimism", blockNumber);
+    console.log("Mint Pause:", comptroller.mintGuardianPaused(address(hWBTC)));
+}
+```
+
+Approximately 4 hours after the attack occurred, the project team initiated a [transaction](https://optimistic.etherscan.io/tx/0xee3d2082ffd137f5faa4f57f9c14f994a769c92a8db0db4bbb0f8fb51369763f) to execute an emergency pause, which prohibited the minting of tokens related to the protocol, preventing further exploitation of the vulnerability.

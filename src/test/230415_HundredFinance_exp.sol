@@ -97,6 +97,12 @@ contract HundredFinanceAttacker is Test {
     }
 
     receive() external payable {}
+
+    function testPatch() external {
+        uint256 blockNumber = 90843467;
+        vm.createSelectFork("optimism", blockNumber);
+        console.log("Mint Pause:", comptroller.mintGuardianPaused(address(hWBTC)));
+    }
 }
 
 contract Drainer is Test {
