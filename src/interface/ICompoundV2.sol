@@ -70,6 +70,9 @@ interface ComptrollerInterface {
         address cTokenBorrowed,
         address cTokenCollateral,
         uint repayAmount) external view returns (uint, uint);
+
+
+    function mintGuardianPaused(address) external view returns (bool);
 }
 
 interface CTokenStorage {
