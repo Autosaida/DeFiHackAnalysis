@@ -2,7 +2,7 @@
 
 Just analyze for fun! 😀
 
-This repository is a personal analysis of DeFi incidence collected from the [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs), designed for learning purposes only. 
+This repository is a personal analysis of DeFi incidents collected from the [DeFiHackLabs](https://github.com/SunWeb3Sec/DeFiHackLabs), designed for learning purposes only. 
 
 ## Intoduction
 
