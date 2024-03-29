@@ -24,6 +24,8 @@ Please note that the analysis notes provided in this repository have been **tran
 
 ## Incident Analysis
 
+[231206_TIME](./analysis/231206_TIME.md)
+
 [231018_MicDao](./analysis/231018_MicDao.md)
 
 [230905_HeavensGate_JumpFarm_QuantumWN](./analysis/230905_HeavensGate_JumpFarm_QuantumWN.md)
