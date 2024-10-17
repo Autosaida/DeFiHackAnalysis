@@ -24,6 +24,8 @@ Please note that the analysis notes provided in this repository have been **tran
 
 ## Incident Analysis
 
+[240415_ChaingeFinance](./analysis/240415_ChaingeFinance.md)
+
 [231206_TIME](./analysis/231206_TIME.md)
 
 [231018_MicDao](./analysis/231018_MicDao.md)
@@ -45,8 +47,4 @@ Please note that the analysis notes provided in this repository have been **tran
 ## Disclaimer
 
 This project is intended purely for learning and educational purposes and to promote understanding of DeFi incidents. It does not endorse or encourage any form of unethical or illegal activities. Please use this knowledge responsibly and ethically.
-
---- 
-
-Special thanks to my friend @[xgxbt](https://github.com/xgxbt) for his valuable insights and discussions throughout the analysis process. 🚀
 
