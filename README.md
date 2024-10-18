@@ -22,6 +22,8 @@ forge test --contracts ./src/test/xxx_exp.sol -vvv
 
 Please note that the analysis notes provided in this repository have been **translated into English using the ChatGPT**. You are welcome to modify or refine the text. Additionally, as a continuously learning novice, I acknowledge that my expertise may have limitations. If you encounter any areas of misunderstanding or analysis errors, please feel free to open an issue to provide constructive criticism or corrections.
 
+You can visit the [website](https://autosaida.github.io/DeFiHackAnalysis) for a better reading experience.
+
 ## Incident Analysis
 
 [240415_ChaingeFinance](./analysis/240415_ChaingeFinance.md)
