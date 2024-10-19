@@ -85,7 +85,11 @@ exchangeRate = \frac{C}{T} \tag{3}
 $$
 
 And the user owns a cToken amount of $kT (0 \leq k \leq 1)$. Then, the accurate amount of Underlying Tokens that can be exchanged for is:
-$$amountAccurate = kT \times exchangeRate = kC \tag{4}$$
+$$
+\begin{align}
+amountAccurate = kT \times exchangeRate = kC \tag{4}
+\end{align}
+$$
 
 While if utilizing the precision loss, the maximum amount of Underlying Tokens that can be obtained is approximately:
 $$amountMax \approx (kT+1) \times exchangeRate = kC + \frac{C}{T} \tag{5} $$
